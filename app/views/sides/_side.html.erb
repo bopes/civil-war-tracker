@@ -1,0 +1,15 @@
+<h1><%= link_to side.name, side %></h1>
+<ul>
+  <li>
+    <h3>Armies</h3>
+    <% side.armies.each do |army| %>
+      <%= link_to army.name, army %>
+    <% end %>
+  </li>
+  <li>
+    <h3>People</h3>
+  </li>
+  <li>
+    <h3>Victories</h3>
+  </li>
+</ul>
