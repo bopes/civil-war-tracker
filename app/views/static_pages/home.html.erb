@@ -1,0 +1,6 @@
+<h1>Home</h1>
+<ul>
+  <% @sides.each do |side| %>
+    <li><%= link_to side.name, side %></li>
+  <% end %>
+</ul>
