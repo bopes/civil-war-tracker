@@ -1,6 +1,9 @@
-<h1>Home</h1>
-<ul>
-  <% @sides.each do |side| %>
-    <li><%= link_to side.name, side %></li>
-  <% end %>
-</ul>
+<%= provide(:title, "Home") %>
+<h1>Civil War Tracker</h1>
+<div class='col-md-6'>
+  <%= render @union %>
+</div>
+<div class='col-md-6'>
+  <%= render @confederacy %>
+</div>
+
