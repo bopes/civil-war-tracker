@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160623034122) do
     t.integer  "player_id"
     t.string   "title"
     t.date     "begin_date"
-    t.date     "end_end"
+    t.date     "end_date"
     t.integer  "army_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
