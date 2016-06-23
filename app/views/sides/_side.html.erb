@@ -1,22 +1,5 @@
 <h1><%= link_to side.name, side %></h1>
 
-<h3>Armies</h3>
-<ul>
-  <% side.armies.each do |army| %>
-    <li><%= link_to army.name, army %></li>
-  <% end %>
-</ul>
-
-<h3>People</h3>
-<ul>
-  <% side.players.each do |player| %>
-    <li><%= link_to player.name, player %></li>
-  <% end %>
-</ul>
-
-<h3>Campaigns</h3>
-<ul>
-  <% side.campaigns.each do |campaign| %>
-    <li><%= link_to campaign.name, campaign %></li>
-  <% end %>
-</ul>
+<%= render partial: 'layouts/subject_list', locals: { name: 'Armies', list: side.armies } %>
+<%= render partial: 'layouts/subject_list', locals: { name: 'Players', list: side.players } %>
+<%= render partial: 'layouts/subject_list', locals: { name: 'Campaigns', list: side.campaigns } %>
