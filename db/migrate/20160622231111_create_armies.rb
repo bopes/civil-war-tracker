@@ -1,7 +1,7 @@
 class CreateArmies < ActiveRecord::Migration
   def change
     create_table :armies do |t|
-      t.integer :side_id
+      t.references :side, foreign_key: true
       t.string :name
 
       t.timestamps null: false
