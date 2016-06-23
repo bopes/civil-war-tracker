@@ -10,3 +10,6 @@ lee = Player.create!(name: "Robert E. Lee", side: confederacy, bio: "Overrated S
 
 vicksburg = Campaign.create!(name: "Vicksburg Campaign", army: army_tennessee, begin_date:"1863-3-29", end_date:"1863-7-4")
 maryland = Campaign.create!(name: "Maryland Campaign", army: army_northern_va, begin_date:"9-4-1862", end_date:"9-20-1862")
+
+grant_1 = Rank.create!(player: grant, title: "Brigadier General", begin_date: "1861-5-17", end_date: "1864-3-2", army: army_tennessee)
+grant_2 = Rank.create!(player: grant, title: "Lieutenant General", begin_date: "1864-3-3", army: army_potomac)
