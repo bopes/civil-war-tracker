@@ -4,6 +4,6 @@ class ArmiesController < ApplicationController
   end
 
   def show
-    @army = Army.find_by(params[:id])
+    @army = Army.find(params[:id])
   end
 end
