@@ -1,8 +1,12 @@
+<% provide(:title, @player.name) %>
 <h1><%= @player.name %></h1>
+
+<h3>Bio</h3>
+<p><%= @player.bio %></p>
 
 <h3>Positions Held</h3>
 <ul>
   <% @player.ranks.each do |rank| %>
-    <li><%= "#{rank.title} - #{rank.army}" %></li>
+    <li><%= "#{rank.title} - " %><%= link_to rank.army.name, rank.army %></li>
   <% end %>
 </ul>
