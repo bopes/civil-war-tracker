@@ -1,1 +1,9 @@
-players index
+<%= provide(:title, "Players") %>
+<h1>Players</h1>
+<div class='col-md-6'>
+  <%= render partial: 'layouts/subject_list', locals: { name: 'The Union', list: @union_players } %>
+</div>
+<div class='col-md-6'>
+  <%= render partial: 'layouts/subject_list', locals: { name: 'The Confederacy', list: @confederate_players } %>
+</div>
+
