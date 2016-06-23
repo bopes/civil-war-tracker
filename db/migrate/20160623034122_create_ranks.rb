@@ -4,7 +4,7 @@ class CreateRanks < ActiveRecord::Migration
       t.integer :player_id
       t.string :title
       t.date :begin_date
-      t.date :end_end
+      t.date :end_date
       t.integer :army_id
 
       t.timestamps null: false
