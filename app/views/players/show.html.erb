@@ -1,1 +1,8 @@
-player show
+<h1><%= @player.name %></h1>
+
+<h3>Positions Held</h3>
+<ul>
+  <% @player.ranks.each do |rank| %>
+    <li><%= "#{rank.title} - #{rank.army}" %></li>
+  <% end %>
+</ul>
