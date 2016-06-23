@@ -1,6 +1,6 @@
 class SidesController < ApplicationController
   def show
-    @side = Side.find_by(params[:id])
+    @side = Side.find(params[:id])
   end
 
   def index
