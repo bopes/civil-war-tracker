@@ -1,2 +1,9 @@
-<h1>Army#index</h1>
-<p>Find me in app/views/army/index.html.erb</p>
+<%= provide(:title, "Armies") %>
+<h1>Players</h1>
+<div class='col-md-6'>
+  <%= render partial: 'layouts/subject_list', locals: { name: 'The Union', list: @union_armies } %>
+</div>
+<div class='col-md-6'>
+  <%= render partial: 'layouts/subject_list', locals: { name: 'The Confederacy', list: @confederate_armies } %>
+</div>
+
