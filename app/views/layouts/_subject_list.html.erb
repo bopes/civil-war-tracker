@@ -1,0 +1,6 @@
+<h3><%= name if name %></h3>
+<ul>
+  <% list.each do |obj| %>
+    <li><%= link_to obj.name, obj %></li>
+  <% end %>
+</ul>
