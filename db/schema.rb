@@ -11,11 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622231111) do
+ActiveRecord::Schema.define(version: 20160623010646) do
 
   create_table "armies", force: :cascade do |t|
     t.integer  "side_id"
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "army_id"
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "side_id"
+    t.text     "bio"
+    t.date     "birthdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
