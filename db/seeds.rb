@@ -22,4 +22,16 @@ grant_2 = Rank.create!(player: grant, title: "Lieutenant General", begin_date: "
 # locations
 loc_vicksburg = Location.create!(city: "Vicksburg", state: "Mississippi", county: "Warren", lat: 32.336111, long: -90.875278)
 loc_antietam = Location.create!(city: "Sharpsburg", state: "Maryland", county: "Washington", lat: 39.457778, long: -77.749444)
+loc_appomattox = Location.create!(city: "Appomattox", state: "Virginia", county: "Appomattox", lat: 37.3775, long: -78.796)
 
+# events
+event_vicksburg_camp = Event.create!(desc: "Start of the Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
+event_vicksburg_siege = Event.create!(desc: "Start of siege of Vicksburg", begin_date: "1863-5-18", end_date: "1863-7-4", location: loc_vicksburg)
+event_antietam = Event.create!(desc: "Battle of Antietam", begin_date: "1862-9-17", location: loc_antietam)
+event_appomattox = Event.create!(desc: "Lee's Surrender to Grant at Appomattox Court House", begin_date: "1865-4-9", location: loc_appomattox)
+
+#battles
+vicksburg = Battle.create!(campaign: camp_vicksburg, victor: union, conclusion: "Surrender")
+antietam = Battle.create!(campaign: camp_maryland, victor: union, conclusion: "Retreat")
+event_vicksburg_siege.link = vicksburg
+event_antietam.link = antietam
