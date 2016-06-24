@@ -25,8 +25,8 @@ loc_antietam = Location.create!(city: "Sharpsburg", state: "Maryland", county: "
 loc_appomattox = Location.create!(city: "Appomattox", state: "Virginia", county: "Appomattox", lat: 37.3775, long: -78.796)
 
 # events
-event_vicksburg_camp = Event.create!(desc: "Start of the Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
-event_vicksburg_siege = Event.create!(desc: "Start of siege of Vicksburg", begin_date: "1863-5-18", end_date: "1863-7-4", location: loc_vicksburg)
+event_vicksburg_camp = Event.create!(desc: "Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
+event_vicksburg_siege = Event.create!(desc: "Siege of Vicksburg", begin_date: "1863-5-18", end_date: "1863-7-4", location: loc_vicksburg)
 event_antietam = Event.create!(desc: "Battle of Antietam", begin_date: "1862-9-17", location: loc_antietam)
 event_appomattox = Event.create!(desc: "Lee's Surrender to Grant at Appomattox Court House", begin_date: "1865-4-9", location: loc_appomattox)
 
