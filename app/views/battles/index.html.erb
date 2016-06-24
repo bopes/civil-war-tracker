@@ -1,2 +1,16 @@
-<h1>Battles#index</h1>
-<p>Find me in app/views/battles/index.html.erb</p>
+<% provide(:title, "Battles") %>
+<h1>Battles</h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Battle</th>
+    <th>Victor</th>
+  </tr>
+  <% @battles.each do |battle| %>
+    <tr>
+      <td><%= battle[:date] %></td>
+      <td><%= link_to battle[:name], battle[:battle] %></td>
+      <td><%= battle[:victor] %></td>
+    </tr>
+  <% end %>
+</table>
