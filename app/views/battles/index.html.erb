@@ -1,16 +1,3 @@
 <% provide(:title, "Battles") %>
 <h1>Battles</h1>
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Battle</th>
-    <th>Victor</th>
-  </tr>
-  <% @battles.each do |battle| %>
-    <tr>
-      <td><%= battle[:date] %></td>
-      <td><%= link_to battle[:name], battle[:battle] %></td>
-      <td><%= battle[:victor] %></td>
-    </tr>
-  <% end %>
-</table>
+<%= render 'table' %>
