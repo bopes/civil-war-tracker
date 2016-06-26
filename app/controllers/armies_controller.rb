@@ -6,5 +6,6 @@ class ArmiesController < ApplicationController
 
   def show
     @army = Army.find(params[:id])
+    @all_events = @army.battles + @army.events
   end
 end
