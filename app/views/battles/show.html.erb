@@ -1,2 +1,12 @@
-<h1>Battles#show</h1>
-<p>Find me in app/views/battles/show.html.erb</p>
+<%= provide(:title, @battle.name) %>
+<h1><%= @battle.name %></h1>
+
+<% if @battle.end_date %>
+  <% dates = "#{@battle.begin_date} - #{@battle.end_date}" %>
+<% else %>
+  <% dates = @battle.begin_date %>
+<% end %>
+
+<h3><%= "#{dates} | Victor: #{@battle.victor.name}" %></h3>
+
+<p><%= @battle.description %></p>
