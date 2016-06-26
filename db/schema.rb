@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623230610) do
+ActiveRecord::Schema.define(version: 20160626192510) do
 
   create_table "armies", force: :cascade do |t|
     t.integer  "side_id"
@@ -21,13 +21,20 @@ ActiveRecord::Schema.define(version: 20160623230610) do
   end
 
   create_table "battles", force: :cascade do |t|
-    t.integer  "event_id"
-    t.integer  "campaign_id"
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.string   "name"
+    t.integer  "location_id"
     t.integer  "victor_id"
+    t.integer  "campaign_id"
     t.string   "conclusion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "battles", ["campaign_id"], name: "index_battles_on_campaign_id"
+  add_index "battles", ["location_id"], name: "index_battles_on_location_id"
+  add_index "battles", ["victor_id"], name: "index_battles_on_victor_id"
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -37,19 +44,6 @@ ActiveRecord::Schema.define(version: 20160623230610) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "events", force: :cascade do |t|
-    t.text     "desc",        null: false
-    t.date     "begin_date",  null: false
-    t.date     "end_date"
-    t.integer  "link_id"
-    t.string   "link_type"
-    t.integer  "location_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "events", ["link_type", "link_id"], name: "index_events_on_link_type_and_link_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "city"
