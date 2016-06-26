@@ -25,13 +25,11 @@ loc_antietam = Location.create!(city: "Sharpsburg", state: "Maryland", county: "
 loc_appomattox = Location.create!(city: "Appomattox", state: "Virginia", county: "Appomattox", lat: 37.3775, long: -78.796)
 
 # events
-event_vicksburg_camp = Event.create!(desc: "Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
-event_vicksburg_siege = Event.create!(desc: "Siege of Vicksburg", begin_date: "1863-5-18", end_date: "1863-7-4", location: loc_vicksburg)
-event_antietam = Event.create!(desc: "Battle of Antietam", begin_date: "1862-9-17", location: loc_antietam)
-event_appomattox = Event.create!(desc: "Lee's Surrender to Grant at Appomattox Court House", begin_date: "1865-4-9", location: loc_appomattox)
+# event_vicksburg_camp = Event.create!(desc: "Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
+# event_vicksburg_siege = Event.create!(desc: "Siege of Vicksburg", begin_date: "1863-5-18", end_date: "1863-7-4", location: loc_vicksburg)
+# event_antietam = Event.create!(desc: "Battle of Antietam", begin_date: "1862-9-17", location: loc_antietam)
+# event_appomattox = Event.create!(desc: "Lee's Surrender to Grant at Appomattox Court House", begin_date: "1865-4-9", location: loc_appomattox)
 
 #battles
-vicksburg = Battle.create!(campaign: camp_vicksburg, victor: union, conclusion: "Surrender")
-antietam = Battle.create!(campaign: camp_maryland, victor: union, conclusion: "Retreat")
-event_vicksburg_siege.link = vicksburg
-event_antietam.link = antietam
+vicksburg = Battle.create!(name: "Siege of Vicksburg", campaign: camp_vicksburg, victor: union, conclusion: "Surrender")
+antietam = Battle.create!(name: "Battle of Antietam", campaign: camp_maryland, victor: union, conclusion: "Retreat")
