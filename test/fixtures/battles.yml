@@ -1,17 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  event_id: 1
-  begin_date: 2016-06-23
-  end_date: 2016-06-23
-  campaign_id: 1
-  victor_id: 1
-  conclusion: MyString
+  begin_date: 2016-06-26
+  end_date: 2016-06-26
+  location_id: 
+  victor_id: 
+  campaign_id: 
 
 two:
-  event_id: 1
-  begin_date: 2016-06-23
-  end_date: 2016-06-23
-  campaign_id: 1
-  victor_id: 1
-  conclusion: MyString
+  begin_date: 2016-06-26
+  end_date: 2016-06-26
+  location_id: 
+  victor_id: 
+  campaign_id: 
