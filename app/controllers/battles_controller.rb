@@ -3,5 +3,6 @@ class BattlesController < ApplicationController
   end
 
   def show
+    @battle = Battle.find_by(params[:id])
   end
 end
