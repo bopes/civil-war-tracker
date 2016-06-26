@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  name: MyString
+  campaign_id: 
+  begin_date: 2016-06-26
+  end_date: 2016-06-26
   description: MyText
-  date: 2016-06-23
-  type: 1
-  battle_id: 1
 
 two:
+  name: MyString
+  campaign_id: 
+  begin_date: 2016-06-26
+  end_date: 2016-06-26
   description: MyText
-  date: 2016-06-23
-  type: 1
-  battle_id: 1
