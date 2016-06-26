@@ -1,2 +1,4 @@
-<h1>Army#show</h1>
-<p>Find me in app/views/army/show.html.erb</p>
+<%= provide(:title, @army.name) %>
+<h1><%= @army.name %></h1>
+
+<%= render partial: 'layouts/subject_list', locals: { name: "Events", list: @all_events } %>
