@@ -8,6 +8,7 @@ class CreateBattles < ActiveRecord::Migration
       t.references :victor, index: true, foreign_key: true
       t.references :campaign, index: true, foreign_key: true
       t.string :conclusion
+      t.string :description
 
       t.timestamps null: false
     end

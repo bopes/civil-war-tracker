@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626192510) do
+ActiveRecord::Schema.define(version: 20160626202344) do
 
   create_table "armies", force: :cascade do |t|
     t.integer  "side_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160626192510) do
     t.integer  "victor_id"
     t.integer  "campaign_id"
     t.string   "conclusion"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -44,6 +45,20 @@ ActiveRecord::Schema.define(version: 20160626192510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "campaign_id"
+    t.integer  "location_id"
+    t.date     "begin_date"
+    t.date     "end_date"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["campaign_id"], name: "index_events_on_campaign_id"
+  add_index "events", ["location_id"], name: "index_events_on_location_id"
 
   create_table "locations", force: :cascade do |t|
     t.string   "city"
