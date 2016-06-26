@@ -9,6 +9,7 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    @battles = @campaign.battles
+    @all_events = @campaign.battles + @campaign.events
+    @all_events.sort_by! { |event| event.begin_date }
   end
 end
