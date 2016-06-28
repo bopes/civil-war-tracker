@@ -25,6 +25,13 @@ function initMap() {
     scrollwheel: false,
     zoom: 4
   });
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: myLatLng,
+    title: 'Hello World!'
+  });
+
 }
 
 
