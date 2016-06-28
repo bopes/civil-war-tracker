@@ -5,8 +5,10 @@ class BattlesController < ApplicationController
   def show
     @battle = Battle.find(params[:id])
     @battleName = @battle.name
-    @latitude = @battle.location.lat
-    @longitude = @battle.location.long
-    @map_url = "https://maps.googleapis.com/maps/api/js?key=" + ENV["GOOGLE_MAPS_API_KEY"] + "&callback=initMap"
+    battle_location = { lat: @battle.location.lat,
+                        lng: @battle.location.long}
+    @locations = [battle_location]
+    # @latitude = @battle.location.lat
+    # @longitude = @battle.location.lng
   end
 end
