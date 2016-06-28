@@ -5,7 +5,7 @@ class Army < ActiveRecord::Base
   has_and_belongs_to_many :battles
   has_and_belongs_to_many :events
 
-  validates :side, presence: true
-  validates :name
+  validates :side_id, presence: true
+  validates :name, presence: true
 
 end
