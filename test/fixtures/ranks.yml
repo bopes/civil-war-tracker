@@ -4,12 +4,12 @@ one:
   player_id: 1
   title: MyString
   begin_date: 2016-06-22
-  end_end: 2016-06-22
+  end_date: 2016-06-22
   army_id: 1
 
 two:
   player_id: 1
   title: MyString
   begin_date: 2016-06-22
-  end_end: 2016-06-22
+  end_date: 2016-06-22
   army_id: 1
