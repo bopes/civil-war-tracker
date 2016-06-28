@@ -23,6 +23,7 @@ grant_2 = Rank.create!(player: grant, title: "Lieutenant General", begin_date: "
 loc_vicksburg = Location.create!(city: "Vicksburg", state: "Mississippi", county: "Warren", lat: 32.336111, long: -90.875278)
 loc_antietam = Location.create!(city: "Sharpsburg", state: "Maryland", county: "Washington", lat: 39.457778, long: -77.749444)
 loc_appomattox = Location.create!(city: "Appomattox", state: "Virginia", county: "Appomattox", lat: 37.3775, long: -78.796)
+loc_jackson = Location.create!(city: "Jackson", state: "Mississippi", county: "Hinds", lat: 32.298889, long: -90.184722)
 
 # events
 # event_vicksburg_camp = Event.create!(desc: "Vicksburg Campaign", begin_date: "1863-3-29", link: camp_vicksburg, location: loc_vicksburg)
@@ -33,6 +34,7 @@ loc_appomattox = Location.create!(city: "Appomattox", state: "Virginia", county:
 #battles
 vicksburg = Battle.create!(name: "Siege of Vicksburg", campaign: camp_vicksburg, begin_date: "1863-5-18", end_date: "1863-7-4", victor: union, conclusion: "Surrender", description: "Grant besieges Vicksburg", location: loc_vicksburg)
 antietam = Battle.create!(name: "Battle of Antietam", campaign: camp_maryland, begin_date: "1862-9-17", victor: union, conclusion: "Retreat", description: "Bloodiest day in American history", location: loc_antietam)
+jackson_miss = Battle.create!(name: "Battle of Jackson, Mississippi", campaign: camp_vicksburg, begin_date: "1863-5-14", victor: union, conclusion: "Retreat", description: "Johnston was unable to defend the city against approaching Union forces and ordered an evacuation of the town.", location: loc_jackson)
 
 #events
 surrender_of_vicksburg = Event.create!(name: "Surrender of Vicksburg", campaign: camp_vicksburg, begin_date: "1863-7-4", description: "Vicksburg surrendered to Grant after 2 month siege", location: loc_vicksburg)

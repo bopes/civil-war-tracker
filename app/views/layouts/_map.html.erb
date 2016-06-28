@@ -1,0 +1,27 @@
+
+<div id="map"></div>
+<script>
+  function initMap() {
+
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 35.6795, lng: -84.4038},
+      scrollwheel: false,
+      zoom: 5
+    });
+
+    <% @locations.each do |location| %>
+
+      // var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
+
+      new google.maps.Marker({
+        map: map,
+        position: {lat: <%= location[:lat] %>, lng: <%= location[:lng] %>}
+      });
+
+    <% end %>
+
+  }
+</script>
+<!-- <%= javascript_include_tag 'maps' %> -->
+<script src=<%= ENV['GOOGLE_MAP_URL'] %> async defer></script>

@@ -4,6 +4,8 @@ class Campaign < ActiveRecord::Base
   has_many :battles
   has_many :events
 
+
+
   def side
     army.side
   end

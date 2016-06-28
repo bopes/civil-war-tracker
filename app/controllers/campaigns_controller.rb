@@ -11,5 +11,6 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @all_events = @campaign.battles + @campaign.events
     @all_events.sort_by! { |event| event.begin_date }
+    @locations = @all_events.map{ |event| {lat: event.location.lat, lng: event.location.long } }
   end
 end
