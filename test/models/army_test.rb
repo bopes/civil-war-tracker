@@ -20,4 +20,9 @@ class ArmyTest < ActiveSupport::TestCase
     assert_not @army.valid?
   end
 
+  test 'do nothing' do
+    assert_not false
+  end
+
+
 end
