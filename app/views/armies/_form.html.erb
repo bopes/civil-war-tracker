@@ -1,0 +1,9 @@
+<%= form_for(@army) do |f| %>
+  <%= f.label :side %>
+  <%= f.collection_select :side_id, Side.order(:name), :id, :name %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form_control'%>
+
+  <%= f.submit yield(:button_text), class:'btn btn-default' %>
+<% end %>
