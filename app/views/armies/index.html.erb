@@ -1,9 +1,17 @@
 <%= provide(:title, "Armies") %>
-<h1>Players</h1>
+<h1>Armies</h1>
+
 <div class='col-md-6'>
-  <%= render partial: 'layouts/subject_list', locals: { name: 'The Union', list: @union_armies } %>
+  <h3>The Union</h3>
+  <%= render partial: 'layouts/list', locals: { list: @union_armies } %>
 </div>
 <div class='col-md-6'>
-  <%= render partial: 'layouts/subject_list', locals: { name: 'The Confederacy', list: @confederate_armies } %>
+  <h3>The Confederacy</h3>
+  <%= render partial: 'layouts/list', locals: { list: @confederate_armies } %>
 </div>
 
+<div class='row'>
+  <div class='col-md-12'>
+    <%= link_to "Add Army", new_army_path %>
+  </div>
+</div>
