@@ -1,5 +1,10 @@
 <h1><%= link_to side.name, side %></h1>
 
-<%= render partial: 'layouts/subject_list', locals: { name: 'Armies', list: side.armies } %>
-<%= render partial: 'layouts/subject_list', locals: { name: 'Players', list: side.players } %>
-<%= render partial: 'layouts/subject_list', locals: { name: 'Campaigns', list: side.campaigns } %>
+<h3>Armies</h3>
+<%= render partial: 'layouts/list', locals: { list: side.armies } %>
+
+<h3>Key Players</h3>
+<%= render partial: 'layouts/list', locals: { list: side.players } %>
+
+<h3>Campaigns</h3>
+<%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
