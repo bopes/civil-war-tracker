@@ -1,9 +1,11 @@
 <%= provide(:title, "Campaigns") %>
 <h1>Campaigns</h1>
 <div class='col-md-6'>
-  <%= render partial: 'layouts/subject_list', locals: { name: "The Union", list: @union_campaigns } %>
+  <h3>The Union</h3>
+  <%= render partial: 'layouts/list', locals: { list: @union_campaigns } %>
 </div>
 <div class='col-md-6'>
-  <%= render partial: 'layouts/subject_list', locals: { name: "The Confederacy", list: @confederate_campaigns } %>
+  <h3>The Confederacy</h3>
+  <%= render partial: 'layouts/list', locals: { list: @confederate_campaigns } %>
 </div>
 
