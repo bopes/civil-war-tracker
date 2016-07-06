@@ -39,11 +39,21 @@ class ArmiesController < ApplicationController
 
       @army.events.delete_all
       @army.events += Event.where("id IN (?)", params[:army][:events])
+
       flash[:success] = "Army successfully updated."
       redirect_to @army
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    p "***************************************************"
+    p params
+    p "***************************************************"
+    @army = Army.find(params[:id])
+    @army.delete
+    redirect_to armies_path
   end
 
 
