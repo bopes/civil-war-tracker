@@ -13,7 +13,6 @@ class ArmiesController < ApplicationController
     if @army.save
       @army.battles += Battle.where("id IN (?)", params[:army][:battles])
       @army.events += Event.where("id IN (?)", params[:army][:events])
-
       flash[:success] = "Army successfully created."
       redirect_to @army
     else
@@ -30,6 +29,23 @@ class ArmiesController < ApplicationController
   def edit
     @army = Army.find(params[:id])
   end
+
+  def update
+    @army = Army.find(params[:id])
+    if @army.update_attributes(army_params)
+
+      @army.battles.delete_all
+      @army.battles += Battle.where("id IN (?)", params[:army][:battles])
+
+      @army.events.delete_all
+      @army.events += Event.where("id IN (?)", params[:army][:events])
+      flash[:success] = "Army successfully updated."
+      redirect_to @army
+    else
+      render 'edit'
+    end
+  end
+
 
   private
 
