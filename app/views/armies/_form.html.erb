@@ -15,7 +15,7 @@
      <h3>Battles</h3>
       <% Battle.all.each do |battle| %>
         <p>
-          <%= f.check_box :battles, { multiple: true }, battle %>
+          <%= f.check_box :battles, { multiple: true }, battle.id %>
           <%= battle.name %>
         </p>
       <% end %>
@@ -25,7 +25,7 @@
       <h3>Events</h3>
       <% Event.all.each do |event| %>
         <p>
-          <%= f.check_box :events, { multiple: true }, event %>
+          <%= f.check_box :events, { multiple: true }, event.id %>
           <%= event.name %>
         </p>
       <% end %>
