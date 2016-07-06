@@ -11,8 +11,11 @@ class ArmiesController < ApplicationController
   def create
     @army = Army.create(army_params)
     if @army.save
+      @army.battles += Battle.where("id IN (?)", params[:army][:battles])
+      @army.events += Event.where("id IN (?)", params[:army][:events])
+
       flash[:success] = "Army successfully created."
-      redirect_to root_url
+      redirect_to @army
     else
       render 'new'
     end
@@ -21,6 +24,11 @@ class ArmiesController < ApplicationController
   def show
     @army = Army.find(params[:id])
     @all_events = @army.battles + @army.events
+    @all_events.sort_by! { |event| event.begin_date }
+  end
+
+  def edit
+    @army = Army.find(params[:id])
   end
 
   private
