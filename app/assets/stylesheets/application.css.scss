@@ -32,6 +32,10 @@ textarea {
   }
 }
 
+.container {
+  max-width: 900px;
+}
+
 
 /* typography */
 
@@ -41,14 +45,14 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
+  // letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
-  letter-spacing: -1px;
+  // letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
@@ -68,7 +72,7 @@ p {
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  // letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
