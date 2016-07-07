@@ -7,10 +7,14 @@
 <h3>Notable Commanders</h3>
 <% @commanders.each do |commander| %>
   <ul>
-    <% commander.end_date ? end_date = " - #{commander.end_date}" : end_date = nil %>
     <li>
       <%= link_to commander.player.name, commander.player %>
-      <%= " - #{commander.title} (#{commander.begin_date}" + end_date + ")" %>
+      <%= " - #{commander.title} " %>
+
+      <% begin_date = commander.begin_date.to_formatted_s(:long) %>
+      <% commander.end_date ? end_date = commander.end_date.to_formatted_s(:long) : end_date = "end" %>
+
+      <%= "(#{begin_date} - #{end_date})" %>
     </li>
   </ul>
 <% end %>
