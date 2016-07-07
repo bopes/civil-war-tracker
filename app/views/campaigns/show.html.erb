@@ -1,6 +1,8 @@
 <%= provide(:title, @campaign.name) %>
 <h1><%= @campaign.name %></h1>
 
+<h4><%= print_dates(@campaign) %></h4>
+
 <h3>Campaign Events:</h3>
 <%= render partial: 'layouts/list', locals: { list: @all_events } %>
 
