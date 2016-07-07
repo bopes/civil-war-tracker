@@ -9,7 +9,8 @@
       <li>
         <%= link_to engagement.name, engagement %>
         <ul>
-          <% engagement.battles.each do |battle| %>
+          <% battles = engagement.battles.sort_by { |b| b.begin_date } %>
+          <% battles.each do |battle| %>
             <li><%= link_to battle.name, battle %></li>
           <% end %>
         </ul>
