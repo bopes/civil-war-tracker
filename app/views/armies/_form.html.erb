@@ -28,7 +28,7 @@
         </p>
       <% end %> -->
 
-      <% Battle.all.each do |battle| %>
+      <% Battle.order(:begin_date).each do |battle| %>
         <p>
           <label>
             <%= check_box_tag :battles, battle.id, @army.battles.include?(battle), name: 'army[battles][]' %>
@@ -42,12 +42,16 @@
 
     <div class='col-md-6'>
       <h3>Events</h3>
-      <% Event.all.each do |event| %>
+
+      <% Event.order(:begin_date).each do |event| %>
         <p>
-          <%= f.check_box :events, { multiple: true }, event.id %>
-          <%= event.name %>
+          <label>
+            <%= check_box_tag :events, event.id, @army.events.include?(event), name: 'army[events][]' %>
+            <%= event.name %>
+          </label>
         </p>
       <% end %>
+
     </div>
   </div>
 
