@@ -16,7 +16,7 @@ class ArmiesController < ApplicationController
       flash[:success] = "#{@army.name} added successfully!"
       redirect_to @army
     else
-      flash[:danger] = "Unable to save. Please try again."
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'new'
     end
   end
