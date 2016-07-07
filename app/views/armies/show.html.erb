@@ -9,12 +9,7 @@
   <ul>
     <li>
       <%= link_to commander.player.name, commander.player %>
-      <%= " - #{commander.title} " %>
-
-      <% begin_date = commander.begin_date.to_formatted_s(:long) %>
-      <% commander.end_date ? end_date = commander.end_date.to_formatted_s(:long) : end_date = "end" %>
-
-      <%= "(#{begin_date} - #{end_date})" %>
+      <%= " - #{commander.title} (#{print_dates(commander)})" %>
     </li>
   </ul>
 <% end %>
