@@ -1,5 +1,8 @@
 class BattlesController < ApplicationController
   def index
+    battles = Battle.where(campaign: nil)
+    campaigns = Campaign.all
+    @engagements = battles + campaigns
   end
 
   def show
@@ -8,7 +11,5 @@ class BattlesController < ApplicationController
     battle_location = { lat: @battle.location.lat,
                         lng: @battle.location.long}
     @locations = [battle_location]
-    # @latitude = @battle.location.lat
-    # @longitude = @battle.location.lng
   end
 end
