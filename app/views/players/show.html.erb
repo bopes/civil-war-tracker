@@ -4,16 +4,32 @@
 <h3>Bio</h3>
 <p><%= @player.bio %></p>
 
-<h3>Positions Held</h3>
+<h3>Timeline</h3>
 <ul>
   <% @ranks.each do |rank| %>
     <li>
-
       <%= "#{rank.title} - " %>
       <%= link_to rank.army.name, rank.army %>
-
       <%= "(#{print_dates(rank)})" %>
+      <ul>
+        <% rank.all_events.each do |event| %>
 
+          <li>
+            <%= link_to event.name, event %>
+            <% if event.is_a? Campaign %>
+              <ul>
+                <% battles = event.battles.sort_by { |b| b.begin_date } %>
+                <% battles.each do |battle| %>
+                  <li>
+                    <%= link_to battle.name, battle if rank.battles.include?(battle)%>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+          </li>
+
+        <% end %>
+      </ul>
     </li>
   <% end %>
 </ul>
