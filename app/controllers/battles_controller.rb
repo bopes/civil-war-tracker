@@ -3,6 +3,7 @@ class BattlesController < ApplicationController
     battles = Battle.where(campaign: nil)
     campaigns = Campaign.all
     @engagements = battles + campaigns
+    @engagements.sort_by! { |eng| eng.begin_date }
   end
 
   def show
