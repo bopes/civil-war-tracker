@@ -1,1 +1,23 @@
-battles index
+<%= provide(:title, "Engagements") %>
+
+<h1>Engagements</h1>
+<ul>
+  <% @engagements.each do |engagement| %>
+
+    <% if engagement.is_a? Campaign %>
+
+      <li>
+        <%= link_to engagement.name, engagement %>
+        <ul>
+          <% engagement.battles.each do |battle| %>
+            <li><%= link_to battle.name, battle %></li>
+          <% end %>
+        </ul>
+      </li>
+
+    <% else %>
+      <li><%= link_to engagement.name, engagement %></li>
+    <% end %>
+
+  <% end %>
+</ul>
