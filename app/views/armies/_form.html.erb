@@ -13,12 +13,31 @@
   <div class='row'>
     <div class='col-md-6'>
      <h3>Battles</h3>
+      <!-- <% Battle.all.each do |battle| %>
+        <p>
+          <% @army.battles.include?(battle) ? used = '1' : used = '2' %>
+          <%= f.check_box :battles, { multiple: true }, battle.id, { :checked => true} %>
+          <%= f.label "#{battle.name}" %>
+        </p>
+      <% end %> -->
+
+      <!-- <%= f.collection_check_boxes :battles, Battle.order(:begin_date), :id, :name do |b| %>
+        <p>
+          <%= b.check_box %>
+          <%= b.label %>
+        </p>
+      <% end %> -->
+
       <% Battle.all.each do |battle| %>
         <p>
-          <%= f.check_box :battles, { multiple: true }, battle.id %>
-          <%= battle.name %>
+          <label>
+            <%= check_box_tag :battles, battle.id, @army.battles.include?(battle), name: 'army[battles][]' %>
+            <%= battle.name %>
+          </label>
         </p>
       <% end %>
+
+
     </div>
 
     <div class='col-md-6'>
