@@ -6,7 +6,17 @@
 
 <h3>Positions Held</h3>
 <ul>
-  <% @player.ranks.each do |rank| %>
-    <li><%= "#{rank.title} - " %><%= link_to rank.army.name, rank.army %></li>
+  <% @ranks.each do |rank| %>
+    <li>
+
+      <%= "#{rank.title} - " %>
+      <%= link_to rank.army.name, rank.army %>
+
+      <% begin_date = rank.begin_date.to_formatted_s(:long) %>
+      <% rank.end_date ? end_date = rank.end_date.to_formatted_s(:long) : end_date = "end" %>
+
+      <%= "(#{begin_date} - #{end_date})" %>
+
+    </li>
   <% end %>
 </ul>
