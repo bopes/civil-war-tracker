@@ -26,7 +26,7 @@ class ArmiesController < ApplicationController
     @all_events = @army.battles + @army.events
     @all_events.sort_by! { |event| event.begin_date }
     @locations = @all_events.map{ |event| {lat: event.location.lat, lng: event.location.long } }
-    @commanders = Rank.where(army: @army).sort_by { |event| event.begin_date }
+    @commanders = Rank.where(army: @army).sort_by { |event| event.begin_date }.reverse
   end
 
   def edit
