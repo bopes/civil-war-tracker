@@ -1,6 +1,7 @@
 <%= provide(:title, @campaign.name) %>
 <h1><%= @campaign.name %></h1>
 
-<%= render partial: 'layouts/subject_list', locals: { name: "Events", list: @all_events } %>
+<h3>Campaign Events:</h3>
+<%= render partial: 'layouts/list', locals: { list: @all_events } %>
 
 <%= render partial: 'layouts/map' %>
