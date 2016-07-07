@@ -12,22 +12,8 @@
 
   <div class='row'>
     <div class='col-md-6'>
+
      <h3>Battles</h3>
-      <!-- <% Battle.all.each do |battle| %>
-        <p>
-          <% @army.battles.include?(battle) ? used = '1' : used = '2' %>
-          <%= f.check_box :battles, { multiple: true }, battle.id, { :checked => true} %>
-          <%= f.label "#{battle.name}" %>
-        </p>
-      <% end %> -->
-
-      <!-- <%= f.collection_check_boxes :battles, Battle.order(:begin_date), :id, :name do |b| %>
-        <p>
-          <%= b.check_box %>
-          <%= b.label %>
-        </p>
-      <% end %> -->
-
       <% Battle.order(:begin_date).each do |battle| %>
         <p>
           <label>
@@ -37,12 +23,11 @@
         </p>
       <% end %>
 
-
     </div>
 
     <div class='col-md-6'>
-      <h3>Events</h3>
 
+      <h3>Events</h3>
       <% Event.order(:begin_date).each do |event| %>
         <p>
           <label>
