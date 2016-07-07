@@ -4,6 +4,18 @@
 <h3>Events Included</h3>
 <%= render partial: 'layouts/list', locals: { list: @all_events } %>
 
+<h3>Notable Commanders</h3>
+<% @commanders.each do |commander| %>
+  <ul>
+    <% commander.end_date ? end_date = " - #{commander.end_date}" : end_date = nil %>
+    <li>
+      <%= link_to commander.player.name, commander.player %>
+      <%= " - #{commander.title} (#{commander.begin_date}" + end_date + ")" %>
+    </li>
+  </ul>
+<% end %>
+
+
 <%= render partial: 'layouts/map' %>
 
 <div class='row'>
