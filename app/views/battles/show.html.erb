@@ -4,7 +4,7 @@
 <% if @battle.end_date %>
   <h4><%= "#{@battle.begin_date} - #{@battle.end_date}" %></h4>
 <% else %>
-  <h4><%= @battle.begin_date %></h4>
+  <h4><%= @battle.begin_date.to_formatted_s(:long) %></h4>
 <% end %>
 
 <h3><%= "Victor: #{@battle.victor.name}" %></h3>
