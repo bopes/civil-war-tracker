@@ -48,9 +48,6 @@ class ArmiesController < ApplicationController
   end
 
   def destroy
-    p "***************************************************"
-    p params
-    p "***************************************************"
     @army = Army.find(params[:id])
     @army.delete
     redirect_to armies_path
