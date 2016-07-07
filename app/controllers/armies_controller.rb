@@ -13,7 +13,7 @@ class ArmiesController < ApplicationController
     if @army.save
       @army.battles += Battle.where("id IN (?)", params[:army][:battles])
       @army.events += Event.where("id IN (?)", params[:army][:events])
-      flash[:success] = "Army successfully created."
+      flash[:success] = "#{@army.name} added successfully!"
       redirect_to @army
     else
       render 'new'
@@ -24,6 +24,7 @@ class ArmiesController < ApplicationController
     @army = Army.find(params[:id])
     @all_events = @army.battles + @army.events
     @all_events.sort_by! { |event| event.begin_date }
+    @locations = @all_events.map{ |event| {lat: event.location.lat, lng: event.location.long } }
   end
 
   def edit
