@@ -2,7 +2,7 @@
 <h1><%= @battle.name %></h1>
 
 <% if @battle.end_date %>
-  <h4><%= "#{@battle.begin_date} - #{@battle.end_date}" %></h4>
+  <h4><%= print_dates(@battle) %></h4>
 <% else %>
   <h4><%= @battle.begin_date.to_formatted_s(:long) %></h4>
 <% end %>
