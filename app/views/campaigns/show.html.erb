@@ -4,4 +4,14 @@
 <h3>Campaign Events:</h3>
 <%= render partial: 'layouts/list', locals: { list: @all_events } %>
 
+<h3>Campaign Commanders</h3>
+<% @commanders.each do |commander| %>
+  <ul>
+    <li>
+      <%= link_to commander.player.name, commander.player %>
+      <%= " - #{commander.title} " %>
+    </li>
+  </ul>
+<% end %>
+
 <%= render partial: 'layouts/map' %>
