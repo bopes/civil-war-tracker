@@ -4,6 +4,8 @@
 <h3>Events Included</h3>
 <%= render partial: 'layouts/list', locals: { list: @all_events } %>
 
+<%= render partial: 'layouts/map' %>
+
 <div class='row'>
   <div class='col-md-12 center'>
     <%= link_to "Edit", edit_army_path, class: 'btn btn-default' %>
