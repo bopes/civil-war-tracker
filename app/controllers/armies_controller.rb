@@ -23,13 +23,6 @@ class ArmiesController < ApplicationController
 
   def show
     @army = Army.find(params[:id])
-
-    @all_events = @army.campaigns + @army.events + @army.battles.reject { |battle| battle.campaign.army == @army }
-    @all_events.sort_by! { |event| event.begin_date }
-
-    @locations = (@army.events + @army.battles).map { |event| {lat: event.location.lat, lng: event.location.long } }
-
-    @commanders = Rank.where(army: @army).sort_by { |event| event.begin_date }.reverse
   end
 
   def edit
