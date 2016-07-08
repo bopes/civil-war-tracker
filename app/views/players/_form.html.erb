@@ -1,0 +1,27 @@
+<%= form_for(@player) do |f| %>
+
+  <div class='row'>
+    <div class='center'>
+      <h1><%= f.text_field :name, class: 'form_control', placeholder: 'Enter Name Here...' %></h1>
+    </div>
+
+    <div class='center'>
+      <h3><%= f.collection_radio_buttons :side_id, Side.order(:name), :id, :name %></h3>
+    </div>
+  </div>
+
+  <div class='center'>
+    <h3><%= f.label :bio %></h3>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div>
+    <h3>Positions Held</h3>
+    <h3 id="add_rank">+</h3>
+  </div>
+
+  <div class='row center'>
+    <%= f.submit yield(:button_text), class:'btn btn-default' %>
+  </div>
+
+<% end %>
