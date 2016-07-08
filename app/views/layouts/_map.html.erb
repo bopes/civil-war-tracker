@@ -12,8 +12,6 @@
 
     <% locations.each do |location| %>
 
-      // var myLatLng = {lat: <%= @latitude %>, lng: <%= @longitude %>};
-
       new google.maps.Marker({
         map: map,
         position: {lat: <%= location[:lat] %>, lng: <%= location[:lng] %>}
