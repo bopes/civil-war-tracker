@@ -16,7 +16,7 @@ class Rank < ActiveRecord::Base
   end
 
   def all_events
-    events = self.events + self.campaigns + self.battles.reject { |battle| battle.campaign }
+    events = self.events + self.campaigns + self.battles.reject { |battle| battle.campaign.army == self.army }
     events.sort_by { |event| event.begin_date }
   end
 
