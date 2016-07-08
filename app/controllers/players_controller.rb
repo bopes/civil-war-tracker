@@ -8,4 +8,9 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @ranks = @player.ranks.sort_by { |rank| rank.begin_date}.reverse
   end
+
+  def new
+    @player = Player.new
+  end
+
 end
