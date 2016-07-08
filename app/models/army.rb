@@ -8,4 +8,17 @@ class Army < ActiveRecord::Base
   validates :side_id, presence: true
   validates :name, presence: true
 
+  def all_events
+    list = self.campaigns + self.events + self.battles.reject { |battle| battle.campaign.army == self }
+    list.sort_by { |event| event.begin_date }
+  end
+
+  def locations
+    (self.events + self.battles).map { |event| {lat: event.location.lat, lng: event.location.long } }
+  end
+
+  def commanders
+    Rank.where(army: self).sort_by { |event| event.begin_date }.reverse
+  end
+
 end
