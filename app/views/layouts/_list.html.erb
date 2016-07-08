@@ -1,5 +1,19 @@
 <ul>
-  <% list.each do |obj| %>
-    <li><%= link_to obj.name, obj %></li>
+  <% list.each do |event| %>
+
+    <li>
+      <%= link_to event.name, event %>
+      <% if event.is_a? Campaign %>
+        <ul>
+          <% battles = event.battles.sort_by { |b| b.begin_date } %>
+          <% battles.each do |battle| %>
+            <li>
+              <%= link_to battle.name, battle %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
+
   <% end %>
 </ul>
