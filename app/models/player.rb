@@ -9,7 +9,7 @@ class Player < ActiveRecord::Base
     battles
   end
 
-  def event
+  def events
     events = []
     ranks.each { |rank| events += rank.events }
     events
@@ -25,6 +25,10 @@ class Player < ActiveRecord::Base
     events = []
     ranks.each { |rank| events += rank.all_events }
     events
+  end
+
+  def locations
+    (self.events + self.battles).map { |event| {lat: event.location.lat, lng: event.location.long } }
   end
 
 end
