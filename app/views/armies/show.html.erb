@@ -2,10 +2,10 @@
 <h1><%= @army.name %></h1>
 
 <h3>Events Included</h3>
-<%= render partial: 'layouts/list', locals: { list: @all_events } %>
+<%= render partial: 'layouts/list', locals: { list: @army.all_events } %>
 
 <h3>Notable Commanders</h3>
-<% @commanders.each do |commander| %>
+<% @army.commanders.each do |commander| %>
   <ul>
     <li>
       <%= link_to commander.player.name, commander.player %>
@@ -15,7 +15,7 @@
 <% end %>
 
 
-<%= render partial: 'layouts/map' %>
+<%= render partial: 'layouts/map', locals: { locations: @army.locations } %>
 
 <div class='row'>
   <div class='col-md-12 center'>
