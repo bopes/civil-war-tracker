@@ -7,7 +7,6 @@ class PlayersController < ApplicationController
   def show
     @player = Player.find(params[:id])
     @ranks = @player.ranks.sort_by { |rank| rank.begin_date}.reverse
-    @locations = @player.locations
   end
 
   def new
