@@ -2,68 +2,64 @@
 
 <h1>Engagements</h1>
 
-<div class='col-md-8'>
-  <table class='table table-striped'>
-    <thead>
-      <tr>
-        <th colspan='2'>
-          <h3>Campaigns</h3>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% @sides.each do |side| %>
-          <td>
-            <h3><%= side.name %></h3>
-          </td>
-        <% end %>
-      </tr>
-
-      <tr>
-        <% @sides.each do |side| %>
-          <td>
-            <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
-          </td>
-        <% end %>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan='2' class='center'>
-          <%= link_to "Add Campaign", new_campaign_path, class: 'btn btn-primary' %>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
-
-<div class='col-md-4'>
-  <table class='table table-striped col-md-4'>
-    <thead>
-      <tr>
-        <th>
-          <h3>Standalone Battles</h3>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>  </td>
-      </tr>
-
-      <tr>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th colspan='2'>
+        <h3>Campaigns</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @sides.each do |side| %>
         <td>
-          <%= render partial: 'layouts/list', locals: { list: @battles } %>
+          <h3><%= side.name %></h3>
         </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan='2' class='center'>
-          <%= link_to "Add Battle", new_battle_path, class: 'btn btn-primary' %>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td>
+          <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
         </td>
-      </tr>
-    </tfoot>
-  </table>
-</div>
+      <% end %>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan='2' class='center'>
+        <%= link_to "Add Campaign", new_campaign_path, class: 'btn btn-primary' %>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+<table class='table table-striped col-md-4'>
+  <thead>
+    <tr>
+      <th>
+        <h3>Standalone Battles</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>  </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= render partial: 'layouts/list', locals: { list: @battles } %>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan='2' class='center'>
+        <%= link_to "Add Battle", new_battle_path, class: 'btn btn-primary' %>
+      </td>
+    </tr>
+  </tfoot>
+</table>
