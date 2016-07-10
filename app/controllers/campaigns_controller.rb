@@ -16,4 +16,26 @@ class CampaignsController < ApplicationController
 
     @commanders = Rank.where(army: @campaign.army).select { |rank| rank.begin_date < @campaign.begin_date && rank.end_date > @campaign.end_date }
   end
+
+  def new
+    @campaign = Campaign.new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+  def campaign_params
+    params.require(:campaign).permit(:name, :army_id, :begin_date, :end_date)
+  end
 end
