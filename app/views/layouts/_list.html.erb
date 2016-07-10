@@ -1,18 +1,15 @@
-<ul>
+<div class='list-group'>
   <% list.each do |event| %>
 
-    <li>
-      <%= link_to event.name, event %>
-      <% if event.is_a? Campaign %>
-        <ul>
-          <% event.all_events.each do |e| %>
-            <li>
-              <%= link_to e.name, e %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    </li>
+    <%= link_to event.name, event, class:'list-group-item' %>
+
+    <% if event.is_a? Campaign %>
+      <div class='list-group list-group-nested'>
+        <% event.all_events.each do |e| %>
+          <%= link_to e.name, e, class:'list-group-item' %>
+        <% end %>
+      </div>
+    <% end %>
 
   <% end %>
-</ul>
+</div>
