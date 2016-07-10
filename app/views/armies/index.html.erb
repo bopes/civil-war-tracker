@@ -24,10 +24,12 @@
         </td>
       <% end %>
     </tr>
-
   </tbody>
+  <tfoot>
+    <tr>
+      <td colspan='2' class='center'>
+        <%= link_to "Add Army", new_army_path, class: 'btn btn-primary' %>
+      </td>
+    </tr>
+  </tfoot>
 </table>
-
-<div class='row center button-actions'>
-  <%= link_to "Add Army", new_army_path, class: 'btn btn-default' %>
-</div>
