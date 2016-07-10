@@ -7,19 +7,21 @@
     <p><%= @player.bio %></p>
 
     <h3>Timeline</h3>
-    <ul class='list-group'>
-      <% @player.ranks.each do |rank| %>
-        <li class='list-group-item'>
-          <div class='rank-title'>
-            <%= "#{rank.title} - " %>
-            <%= link_to rank.army.name, rank.army %> <br>
-            <span><%= "#{print_dates(rank)}" %></span>
-          </div>
+    <section class='list-container'>
+      <ul class='list-group'>
+        <% @player.ranks.each do |rank| %>
+          <li class='list-group-item'>
+            <div class='rank-title'>
+              <%= "#{rank.title} - " %>
+              <%= link_to rank.army.name, rank.army %> <br>
+              <span><%= "#{print_dates(rank)}" %></span>
+            </div>
 
-          <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
-        </li>
-      <% end %>
-    </ul>
+            <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
   </div>
 
   <div class='col-md-6'>
