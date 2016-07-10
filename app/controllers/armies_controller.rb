@@ -1,7 +1,6 @@
 class ArmiesController < ApplicationController
   def index
-    @union_armies = find_union(Army)
-    @confederate_armies = find_confederates(Army)
+    @sides = Side.all
   end
 
   def new
