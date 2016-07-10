@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+test_battle:
+  name: "Test Battle"
   begin_date: 2016-06-26
-  end_date: 2016-06-26
-  location_id: 
-  victor_id: 
-  campaign_id: 
-
-two:
-  begin_date: 2016-06-26
-  end_date: 2016-06-26
-  location_id: 
-  victor_id: 
-  campaign_id: 
+  end_date: 2016-06-27
+  location_id: 1
+  victor_id: 1
+  campaign_id: 1
+  conclusion: Retreat
+  description: "Test description"
