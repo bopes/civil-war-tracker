@@ -1,57 +1,38 @@
 <div class='row'>
-  <table class='table table-striped'>
+  <% @sides.each do |side| %>
+    <h1 class='col-md-6'><%= side.name %></h1>
+  <% end %>
+</div>
 
-    <thead>
-      <tr>
-        <% @sides.each do |side| %>
-          <th>
-            <h1><%= side.name %></h1>
-          </th>
-        <% end %>
-      </tr>
-    </thead>
+<h3>Armies</h3>
+<div class='row'>
+  <% @sides.each do |side| %>
+    <div class='col-md-6'>
+      <div class='list-container'>
+        <%= render partial: 'layouts/list', locals: { list: side.armies } %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-    <tbody>
-      <tr>
-        <td colspan='2'><h3>Armies</h3></td>
-      </tr>
+<h3>Key Players</h3>
+<div class='row'>
+  <% @sides.each do |side| %>
+    <div class='col-md-6'>
+      <div class='list-container'>
+        <%= render partial: 'layouts/list', locals: { list: side.players } %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-      <tr>
-        <% @sides.each do |side| %>
-          <td class='homepage-table'>
-            <%= render partial: 'layouts/list', locals: { list: side.armies } %>
-          </td>
-        <% end %>
-      </tr>
-
-      <tr>
-        <td colspan='2'>
-          <h3>Key Players</h3>
-        </td>
-      </tr>
-
-      <tr>
-        <% @sides.each do |side| %>
-          <td class='homepage-table'>
-            <%= render partial: 'layouts/list', locals: { list: side.players } %>
-          </td>
-        <% end %>
-      </tr>
-
-      <tr>
-        <td colspan='2'>
-          <h3>Campaigns</h3>
-        </td>
-      </tr>
-
-      <tr>
-        <% @sides.each do |side| %>
-          <td class='homepage-table'>
-            <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
-          </td>
-        <% end %>
-      </tr>
-    </tbody>
-
-  </table>
+<h3>Campaigns</h3>
+<div class='row'>
+  <% @sides.each do |side| %>
+    <div class='col-md-6'>
+      <div class='list-container'>
+        <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
+      </div>
+    </div>
+  <% end %>
 </div>
