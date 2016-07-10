@@ -9,7 +9,7 @@ class Army < ActiveRecord::Base
   validates :name, presence: true
 
   def all_events
-    list = self.campaigns + self.events + self.battles.reject { |battle| battle.campaign.army == self }
+    list = (self.events + self.battles).reject { |e| e.campaign.army == self } + self.campaigns
     list.sort_by { |event| event.begin_date }
   end
 
