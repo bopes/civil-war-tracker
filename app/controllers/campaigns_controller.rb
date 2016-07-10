@@ -10,11 +10,11 @@ class CampaignsController < ApplicationController
   def show
     @campaign = Campaign.find(params[:id])
 
-    @all_events = (@campaign.battles + @campaign.events).sort_by! { |event| event.begin_date }
+    # @all_events = (@campaign.battles + @campaign.events).sort_by! { |event| event.begin_date }
 
-    @locations = @all_events.map{ |event| {lat: event.location.lat, lng: event.location.long } }
+    # @locations = @all_events.map{ |event| {lat: event.location.lat, lng: event.location.long } }
 
-    @commanders = Rank.where(army: @campaign.army).select { |rank| rank.begin_date < @campaign.begin_date && rank.end_date > @campaign.end_date }
+    # @commanders = Rank.where(army: @campaign.army).select { |rank| rank.begin_date < @campaign.begin_date && rank.end_date > @campaign.end_date }
   end
 
   def new
@@ -22,6 +22,14 @@ class CampaignsController < ApplicationController
   end
 
   def create
+    @campaign = Campaign.create(campaign_params)
+    if @campaign.save
+      flash[:success] = "#{@campaign.name} added successfully!"
+      redirect_to @campaign
+    else
+      flash.now[:danger] = "Unable to save. Please try again."
+      render 'new'
+    end
   end
 
   def edit
