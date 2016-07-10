@@ -1,25 +1,33 @@
 <%= provide(:title, @army.name) %>
 <h1><%= @army.name %></h1>
 
-<h3>Events Included</h3>
-<%= render partial: 'layouts/list', locals: { list: @army.all_events } %>
-
-<h3>Notable Commanders</h3>
-<% @army.commanders.each do |commander| %>
-  <ul>
-    <li>
-      <%= link_to commander.player.name, commander.player %>
-      <%= " - #{commander.title} (#{print_dates(commander)})" %>
-    </li>
-  </ul>
-<% end %>
-
-
-<%= render partial: 'layouts/map', locals: { locations: @army.location_coordinates } %>
-
 <div class='row'>
-  <div class='col-md-12 center'>
-    <%= link_to "Edit", edit_army_path, class: 'btn btn-default' %>
-    <%= link_to 'Delete Army', @army, method: :delete, data: { confirm: "Are you sure you want to delete the #{@army.name}?" }, class: 'btn btn-danger' %>
+  <div class='col-md-6'>
+    <div>
+      <h3>Events Included</h3>
+      <%= render partial: 'layouts/list', locals: { list: @army.all_events } %>
+      <%= link_to "Add New Campaign", new_campaign_path(army_id: @army.id), class: "btn btn-default btn-sm" %>
+    </div>
+
+    <h3>Notable Commanders</h3>
+    <% @army.commanders.each do |commander| %>
+      <ul>
+        <li>
+          <%= link_to commander.player.name, commander.player %>
+          <%= " - #{commander.title} (#{print_dates(commander)})" %>
+        </li>
+      </ul>
+    <% end %>
   </div>
+
+  <div class='col-md-6'>
+    <h3>Positions</h3>
+    <%= render partial: 'layouts/map', locals: { locations: @army.location_coordinates } %>
+  </div>
+</div>
+
+<div class='row center button-actions'>
+  <%= link_to "Edit", edit_army_path, class: 'btn btn-default' %>
+  <%= link_to 'Delete', @army, method: :delete, data: { confirm: "Are you sure you want to delete the #{@army.name}?" }, class: 'btn btn-danger' %>
+
 </div>

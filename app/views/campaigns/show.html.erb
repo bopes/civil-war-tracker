@@ -3,17 +3,27 @@
 
 <h4><%= print_dates(@campaign) %></h4>
 
-<h3>Campaign Events</h3>
-<%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
+<div class='col-md-6'>
+  <h3>Campaign Events</h3>
+  <%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
 
-<h3>Campaign Commanders</h3>
-<% @campaign.commanders.each do |commander| %>
-  <ul>
-    <li>
-      <%= link_to commander.player.name, commander.player %>
-      <%= " - #{commander.title} " %>
-    </li>
-  </ul>
-<% end %>
+  <h3>Campaign Commanders</h3>
+  <% @campaign.commanders.each do |commander| %>
+    <ul>
+      <li>
+        <%= link_to commander.player.name, commander.player %>
+        <%= " - #{commander.title} " %>
+      </li>
+    </ul>
+  <% end %>
+</div>
 
-<%= render partial: 'layouts/map', locals: { locations: @campaign.location_coordinates } %>
+<div class='col-md-6'>
+  <h3>Engagements</h3>
+  <%= render partial: 'layouts/map', locals: { locations: @campaign.location_coordinates } %>
+</div>
+
+<div class='row center button-actions'>
+  <%= link_to "Edit", edit_campaign_path, class:'btn btn-default' %>
+  <%= link_to "Delete", @campaign, method: :delete, data: { confirm: "Are you sure you want to delete the #{@campaign.name}?" }, class:'btn btn-danger' %>
+</div>

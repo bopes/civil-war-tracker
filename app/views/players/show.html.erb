@@ -1,27 +1,33 @@
 <% provide(:title, @player.name) %>
 <h1><%= @player.name %></h1>
 
-<h3>Bio</h3>
-<p><%= @player.bio %></p>
-
-<h3>Timeline</h3>
-<ul>
-  <% @ranks.each do |rank| %>
-    <li>
-      <%= "#{rank.title} - " %>
-      <%= link_to rank.army.name, rank.army %>
-      <%= "(#{print_dates(rank)})" %>
-
-      <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
-    </li>
-  <% end %>
-</ul>
-
-<%= render partial: 'layouts/map', locals: { locations: @player.location_coordinates } %>
-
 <div class='row'>
-  <div class='col-md-12 center'>
-    <%= link_to "Edit", edit_player_path, class: 'btn btn-default' %>
-    <%= link_to 'Delete', @player, method: :delete, data: { confirm: "Are you sure you want to delete #{@player.name}?" }, class: 'btn btn-danger' %>
+  <div class='col-md-6'>
+    <h3>Biography</h3>
+    <p><%= @player.bio %></p>
+
+    <h3>Timeline</h3>
+    <ul>
+      <% @ranks.each do |rank| %>
+        <li>
+          <%= "#{rank.title} - " %>
+          <%= link_to rank.army.name, rank.army %>
+          <%= "(#{print_dates(rank)})" %>
+
+          <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class='col-md-6'>
+    <h3>Positions</h3>
+    <%= render partial: 'layouts/map', locals: { locations: @player.location_coordinates } %>
   </div>
 </div>
+
+<div class='row center button-actions'>
+  <%= link_to "Edit", edit_player_path, class: 'btn btn-default' %>
+  <%= link_to 'Delete', @player, method: :delete, data: { confirm: "Are you sure you want to delete #{@player.name}?" }, class: 'btn btn-danger' %>
+</div>
+
