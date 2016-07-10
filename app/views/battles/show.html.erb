@@ -13,5 +13,5 @@
 
 <p><%= @battle.description %></p>
 
-<%= render 'layouts/map' %>
+<%= render partial: 'layouts/map', locals: { locations: @battle.location_coordinates } %>
 

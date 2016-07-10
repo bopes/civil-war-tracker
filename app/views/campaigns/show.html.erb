@@ -3,11 +3,11 @@
 
 <h4><%= print_dates(@campaign) %></h4>
 
-<h3>Campaign Events:</h3>
-<%= render partial: 'layouts/list', locals: { list: @all_events } %>
+<h3>Campaign Events</h3>
+<%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
 
 <h3>Campaign Commanders</h3>
-<% @commanders.each do |commander| %>
+<% @campaign.commanders.each do |commander| %>
   <ul>
     <li>
       <%= link_to commander.player.name, commander.player %>
@@ -16,4 +16,4 @@
   </ul>
 <% end %>
 
-<%= render partial: 'layouts/map' %>
+<%= render partial: 'layouts/map', locals: { locations: @campaign.location_coordinates } %>
