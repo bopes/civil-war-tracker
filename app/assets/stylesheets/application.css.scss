@@ -109,10 +109,14 @@ footer {
   }
 }
 
-table, td {
-  vertical-align: top;
-  // border: 1px solid red;
-  width: 100%;
+table {
+  width: 50%;
+}
+
+td {
+  h3 {
+    margin: 0;
+  }
 }
 
 #map {
