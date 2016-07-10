@@ -1,8 +1,69 @@
 <h1>Civil War Tracker</h1>
-<div class='col-md-6'>
-  <%= render @union %>
-</div>
-<div class='col-md-6'>
-  <%= render @confederacy %>
-</div>
 
+<div class='row'>
+  <table>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <h1><%= link_to side.name, side %></h1>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <h3>Armies</h3>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <%= render partial: 'layouts/list', locals: { list: side.armies } %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <h3>Key Players</h3>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <%= render partial: 'layouts/list', locals: { list: side.players } %>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <h3>Campaigns</h3>
+        </td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <% @sides.each do |side| %>
+        <td class='col-sm-6'>
+          <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
+        </td>
+      <% end %>
+    </tr>
+
+
+
+
+
+
+
+  </table>
+</div>
