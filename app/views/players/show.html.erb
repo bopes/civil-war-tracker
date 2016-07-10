@@ -7,12 +7,14 @@
     <p><%= @player.bio %></p>
 
     <h3>Timeline</h3>
-    <ul>
+    <ul class='list-group'>
       <% @ranks.each do |rank| %>
-        <li>
-          <%= "#{rank.title} - " %>
-          <%= link_to rank.army.name, rank.army %>
-          <%= "(#{print_dates(rank)})" %>
+        <li class='list-group-item'>
+          <div class='rank-title'>
+            <%= "#{rank.title} - " %>
+            <%= link_to rank.army.name, rank.army %> <br>
+            <span class='commander-dates'><%= "#{print_dates(rank)}" %></span>
+          </div>
 
           <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
         </li>
