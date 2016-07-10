@@ -1,5 +1,7 @@
 class Battle < ActiveRecord::Base
 
+  default_scope { order(:begin_date) }
+
   belongs_to :location
   belongs_to :victor, class_name: "Side"
   belongs_to :campaign

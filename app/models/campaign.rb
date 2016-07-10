@@ -1,5 +1,7 @@
 class Campaign < ActiveRecord::Base
 
+  default_scope { order(:begin_date) }
+
   belongs_to :army, inverse_of: :campaigns
   has_many :battles
   has_many :events
