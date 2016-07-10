@@ -1,0 +1,14 @@
+<%= form_for(@campaign) do |f| %>
+
+  <div class='row center'>
+    <h1><%= f.text_field :name, class: 'form_control', placeholder: 'Enter Name Here...' %></h1>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-6'>
+      <h3>Army</h3>
+      <%= f.collection_select :army_id, Army.group(:side_id), :id, :name %>
+    </div>
+  </div>
+
+<% end %>
