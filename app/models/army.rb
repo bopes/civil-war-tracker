@@ -13,8 +13,8 @@ class Army < ActiveRecord::Base
     list.sort_by { |event| event.begin_date }
   end
 
-  def locations
-    (self.events + self.battles).map { |event| {lat: event.location.lat, lng: event.location.long } }
+  def location_coordinates
+    (self.events + self.battles).map { |event| event.location.coordinates }
   end
 
   def commanders

@@ -8,4 +8,8 @@ class Battle < ActiveRecord::Base
   validates :location_id, presence: true
   validates :victor_id, presence: true
 
+  def location_coordinates
+    [self.location.coordinates]
+  end
+
 end
