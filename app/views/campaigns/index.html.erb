@@ -1,11 +1,17 @@
 <%= provide(:title, "Campaigns") %>
 <h1>Campaigns</h1>
-<div class='col-md-6'>
-  <h3>The Union</h3>
-  <%= render partial: 'layouts/list', locals: { list: @union_campaigns } %>
-</div>
-<div class='col-md-6'>
-  <h3>The Confederacy</h3>
-  <%= render partial: 'layouts/list', locals: { list: @confederate_campaigns } %>
+
+<div class='row'>
+  <div class='col-md-6'>
+    <h3>The Union</h3>
+    <%= render partial: 'layouts/list', locals: { list: @union_campaigns } %>
+  </div>
+  <div class='col-md-6'>
+    <h3>The Confederacy</h3>
+    <%= render partial: 'layouts/list', locals: { list: @confederate_campaigns } %>
+  </div>
 </div>
 
+<div class='row center button-actions'>
+  <%= link_to "Add Campaign", new_campaign_path, class: 'btn btn-default' %>
+</div>

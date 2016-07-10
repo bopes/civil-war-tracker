@@ -1,24 +1,31 @@
 <%= provide(:title, "Engagements") %>
 
 <h1>Engagements</h1>
-<ul>
-  <% @engagements.each do |engagement| %>
 
-    <% if engagement.is_a? Campaign %>
+<div class='row'>
+  <ul>
+    <% @engagements.each do |engagement| %>
 
-      <li>
-        <%= link_to engagement.name, engagement %>
-        <ul>
-          <% battles = engagement.battles.sort_by { |b| b.begin_date } %>
-          <% battles.each do |battle| %>
-            <li><%= link_to battle.name, battle %></li>
-          <% end %>
-        </ul>
-      </li>
+      <% if engagement.is_a? Campaign %>
+        <li>
+          <%= link_to engagement.name, engagement %>
+          <ul>
+            <% battles = engagement.battles.sort_by { |b| b.begin_date } %>
+            <% battles.each do |battle| %>
+              <li><%= link_to battle.name, battle %></li>
+            <% end %>
+          </ul>
+        </li>
 
-    <% else %>
-      <li><%= link_to engagement.name, engagement %></li>
+      <% else %>
+        <li><%= link_to engagement.name, engagement %></li>
+      <% end %>
+
     <% end %>
+  </ul>
+</div>
 
-  <% end %>
-</ul>
+<div class='row center button-actions'>
+  <%= link_to "Add Battle", new_battle_path, class: 'btn btn-default' %>
+  <%= link_to "Add Campaign", new_campaign_path, class: 'btn btn-default' %>
+</div>
