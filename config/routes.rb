@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :sides, only: [:index, :show, :new, :create]
   resources :players
   resources :armies
-  resources :campaigns, only: [:index, :show, :new, :create]
+  resources :campaigns
   resources :battles, only: [:show, :new, :create]
   resources :events, only: [:index, :show, :new, :create]
   resources :locations
