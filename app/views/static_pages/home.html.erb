@@ -1,69 +1,57 @@
-<h1>Civil War Tracker</h1>
-
 <div class='row'>
-  <table>
+  <table class='table table-striped'>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
-          <h1><%= link_to side.name, side %></h1>
-        </td>
-      <% end %>
-    </tr>
+    <thead>
+      <tr>
+        <% @sides.each do |side| %>
+          <th>
+            <h1><%= side.name %></h1>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
-          <h3>Armies</h3>
-        </td>
-      <% end %>
-    </tr>
+    <tbody>
+      <tr>
+        <td colspan='2'><h3>Armies</h3></td>
+      </tr>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
-          <%= render partial: 'layouts/list', locals: { list: side.armies } %>
-        </td>
-      <% end %>
-    </tr>
+      <tr>
+        <% @sides.each do |side| %>
+          <td class='homepage-table'>
+            <%= render partial: 'layouts/list', locals: { list: side.armies } %>
+          </td>
+        <% end %>
+      </tr>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
+      <tr>
+        <td colspan='2'>
           <h3>Key Players</h3>
         </td>
-      <% end %>
-    </tr>
+      </tr>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
-          <%= render partial: 'layouts/list', locals: { list: side.players } %>
-        </td>
-      <% end %>
-    </tr>
+      <tr>
+        <% @sides.each do |side| %>
+          <td class='homepage-table'>
+            <%= render partial: 'layouts/list', locals: { list: side.players } %>
+          </td>
+        <% end %>
+      </tr>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
+      <tr>
+        <td colspan='2'>
           <h3>Campaigns</h3>
         </td>
-      <% end %>
-    </tr>
+      </tr>
 
-    <tr>
-      <% @sides.each do |side| %>
-        <td class='col-sm-6'>
-          <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
-        </td>
-      <% end %>
-    </tr>
-
-
-
-
-
-
+      <tr>
+        <% @sides.each do |side| %>
+          <td class='homepage-table'>
+            <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
 
   </table>
 </div>
