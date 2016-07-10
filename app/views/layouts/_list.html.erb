@@ -5,10 +5,9 @@
       <%= link_to event.name, event %>
       <% if event.is_a? Campaign %>
         <ul>
-          <% battles = event.battles.sort_by { |b| b.begin_date } %>
-          <% battles.each do |battle| %>
+          <% event.all_events.each do |e| %>
             <li>
-              <%= link_to battle.name, battle %>
+              <%= link_to e.name, e %>
             </li>
           <% end %>
         </ul>
