@@ -7,7 +7,7 @@
     <p><%= @player.bio %></p>
 
     <h3>Timeline</h3>
-    <section class='list-container'>
+    <div class='content-container'>
       <ul class='list-group'>
         <% @player.ranks.each do |rank| %>
           <li class='list-group-item'>
@@ -21,7 +21,7 @@
           </li>
         <% end %>
       </ul>
-    </section>
+    </div>
   </div>
 
   <div class='col-md-6'>

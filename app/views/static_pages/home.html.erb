@@ -8,7 +8,7 @@
 <div class='row'>
   <% @sides.each do |side| %>
     <div class='col-md-6'>
-      <div class='list-container'>
+      <div class='content-container'>
         <%= render partial: 'layouts/list', locals: { list: side.armies } %>
       </div>
     </div>
@@ -19,7 +19,7 @@
 <div class='row'>
   <% @sides.each do |side| %>
     <div class='col-md-6'>
-      <div class='list-container'>
+      <div class='content-container'>
         <%= render partial: 'layouts/list', locals: { list: side.players } %>
       </div>
     </div>
@@ -30,7 +30,7 @@
 <div class='row'>
   <% @sides.each do |side| %>
     <div class='col-md-6'>
-      <div class='list-container'>
+      <div class='content-container'>
         <%= render partial: 'layouts/list', locals: { list: side.campaigns } %>
       </div>
     </div>
