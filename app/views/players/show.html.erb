@@ -13,7 +13,7 @@
           <div class='rank-title'>
             <%= "#{rank.title} - " %>
             <%= link_to rank.army.name, rank.army %> <br>
-            <span class='commander-dates'><%= "#{print_dates(rank)}" %></span>
+            <span><%= "#{print_dates(rank)}" %></span>
           </div>
 
           <%= render partial: 'layouts/list', locals: { list: rank.all_events } %>
