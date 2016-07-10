@@ -5,10 +5,24 @@
   </div>
 
   <div class='row'>
-    <div class='col-md-6'>
       <h3>Army</h3>
       <%= f.grouped_collection_select :army_id, Side.all, :armies, :name, :id, :name %>
+  </div>
+
+  <div>
+    <h3 class='row'>Dates</h3>
+    <div class='col-md-6'>
+      <%= f.label "Begin Date", class: 'form_control' %>
+      <%= f.date_field :begin_date, class: 'form_control' %>
     </div>
+    <div class='col-md-6'>
+      <%= f.label "End Date", class: 'form_control' %>
+      <%= f.date_field :end_date, class: 'form_control' %>
+    </div>
+  </div>
+
+  <div class='center'>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 
 <% end %>
