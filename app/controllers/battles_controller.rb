@@ -1,9 +1,7 @@
 class BattlesController < ApplicationController
   def index
-    battles = Battle.where(campaign: nil)
-    campaigns = Campaign.all
-    @engagements = battles + campaigns
-    @engagements.sort_by! { |eng| eng.begin_date }
+    @sides = Side.all
+    @battles = Battle.where(campaign: nil)
   end
 
   def show
