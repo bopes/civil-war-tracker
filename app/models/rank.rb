@@ -1,4 +1,5 @@
 class Rank < ActiveRecord::Base
+  default_scope { order(begin_date: :desc) }
 
   belongs_to :player, inverse_of: :ranks
   belongs_to :army
