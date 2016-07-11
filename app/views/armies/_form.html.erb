@@ -2,40 +2,46 @@
 
   <div class='row'>
     <div class='center'>
-      <h1><%= f.text_field :name, class: 'form_control', placeholder: 'Enter Name Here...' %></h1>
+      <%= f.text_field :name, class: 'form_control name-input', placeholder: 'Enter Name Here...' %>
     </div>
 
-    <div class='center'>
-      <h3><%= f.collection_radio_buttons :side_id, Side.order(:name), :id, :name %></h3>
+    <div class='center side-selection'>
+      <%= f.collection_radio_buttons :side_id, Side.order(:name), :id, :name %>
     </div>
   </div>
 
   <div class='row'>
     <div class='col-md-6'>
 
-     <h3>Battles</h3>
-      <% Battle.order(:begin_date).each do |battle| %>
-        <p>
-          <label>
-            <%= check_box_tag :battles, battle.id, @army.battles.include?(battle), name: 'army[battles][]' %>
-            <%= battle.name %>
-          </label>
-        </p>
-      <% end %>
+      <h3>Battles</h3>
+
+      <div class='content-container'>
+        <% Battle.order(:begin_date).each do |battle| %>
+          <p>
+            <label>
+              <%= check_box_tag :battles, battle.id, @army.battles.include?(battle), name: 'army[battles][]' %>
+              <%= battle.name %>
+            </label>
+          </p>
+        <% end %>
+      </div>
 
     </div>
 
     <div class='col-md-6'>
 
       <h3>Events</h3>
-      <% Event.order(:begin_date).each do |event| %>
-        <p>
-          <label>
-            <%= check_box_tag :events, event.id, @army.events.include?(event), name: 'army[events][]' %>
-            <%= event.name %>
-          </label>
-        </p>
-      <% end %>
+
+      <div class='content-container'>
+        <% Event.order(:begin_date).each do |event| %>
+          <p>
+            <label>
+              <%= check_box_tag :events, event.id, @army.events.include?(event), name: 'army[events][]' %>
+              <%= event.name %>
+            </label>
+          </p>
+        <% end %>
+      </div>
 
     </div>
   </div>
