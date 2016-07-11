@@ -3,27 +3,30 @@
 
 <h4><%= print_dates(@campaign) %></h4>
 
-<div class='col-md-6'>
-  <h3>Campaign Events</h3>
-  <%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
+<div class='row'>
+  <div class='col-md-6'>
+    <h3>Campaign Events</h3>
+    <div class='content-container'>
+      <%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
+    </div>
 
-  <h3>Campaign Commanders</h3>
-  <% @campaign.commanders.each do |commander| %>
-    <ul>
-      <li>
-        <%= link_to commander.player.name, commander.player %>
-        <%= " - #{commander.title} " %>
-      </li>
-    </ul>
-  <% end %>
+    <h3>Campaign Commanders</h3>
+    <div class='content-container'>
+      <% @campaign.commanders.each do |commander| %>
+        <div class='list-group'>
+          <%= link_to "#{commander.player.name} - #{commander.title}", commander.player, class:'list-group-item' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='col-md-6'>
+    <h3>Engagements</h3>
+    <%= render partial: 'layouts/map', locals: { locations: @campaign.location_coordinates } %>
+  </div>
 </div>
 
-<div class='col-md-6'>
-  <h3>Engagements</h3>
-  <%= render partial: 'layouts/map', locals: { locations: @campaign.location_coordinates } %>
-</div>
-
-<div class='row center button-actions'>
+<div class='row button-actions'>
   <%= link_to "Edit", edit_campaign_path, class:'btn btn-default' %>
   <%= link_to "Delete", @campaign, method: :delete, data: { confirm: "Are you sure you want to delete the #{@campaign.name}?" }, class:'btn btn-danger' %>
 </div>
