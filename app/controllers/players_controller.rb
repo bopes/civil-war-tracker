@@ -9,6 +9,8 @@ class PlayersController < ApplicationController
   end
 
   def new
+    @sides = Side.all
+    @events = Event.order(:begin_date)
     @player = Player.new
   end
 
