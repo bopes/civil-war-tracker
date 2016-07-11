@@ -7,4 +7,8 @@ class Location < ActiveRecord::Base
     {lat: self.lat, lng: self.long }
   end
 
+  def name
+    "#{self.city}, #{self.state}"
+  end
+
 end
