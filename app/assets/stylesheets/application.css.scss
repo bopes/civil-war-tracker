@@ -131,6 +131,25 @@ p {
   padding: 8px;
 }
 
+/* Forms */
+
+.name-input {
+  width: 40%;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 8px;
+}
+
+.side-selection > label {
+  font-size: 1.5em;
+  margin: 0 8px 0 8px;
+}
+
+.side-selection > input {
+  position: relative;
+  bottom: 3px;
+}
+
 /* Miscellaneous */
 
 .button-actions {
