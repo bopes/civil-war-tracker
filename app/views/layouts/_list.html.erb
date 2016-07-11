@@ -13,7 +13,7 @@
         <% event.all_events.each do |e| %>
 
           <a href=<%= "/#{plural(e)}/#{e.id}" %> class='list-group-item'>
-            <%= e.name %> <br>
+            <span class='inline-event-name'><%= e.name %></span> <br>
             <span class='inline-dates'><%= print_dates(e) %></span>
           </a>
 
