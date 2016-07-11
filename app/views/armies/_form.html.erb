@@ -6,7 +6,7 @@
     </div>
 
     <div class='center side-selection'>
-      <%= f.collection_radio_buttons :side_id, Side.all, :id, :name %>
+      <%= f.collection_radio_buttons :side_id, @sides, :id, :name %>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
       <h3>Battles</h3>
 
       <div class='content-container'>
-        <% Battle.order(:begin_date).each do |battle| %>
+        <% @battles.each do |battle| %>
           <p>
             <label>
               <%= check_box_tag :battles, battle.id, @army.battles.include?(battle), name: 'army[battles][]' %>
@@ -33,7 +33,7 @@
       <h3>Events</h3>
 
       <div class='content-container'>
-        <% Event.order(:begin_date).each do |event| %>
+        <% @events.each do |event| %>
           <p>
             <label>
               <%= check_box_tag :events, event.id, @army.events.include?(event), name: 'army[events][]' %>
