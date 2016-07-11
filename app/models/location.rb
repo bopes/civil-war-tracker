@@ -11,4 +11,8 @@ class Location < ActiveRecord::Base
     "#{self.city}, #{self.state}"
   end
 
+  def all_events
+    self.battles + self.events
+  end
+
 end
