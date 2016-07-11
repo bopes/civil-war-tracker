@@ -41,9 +41,10 @@ class ArmiesController < ApplicationController
       @army.events.delete_all
       @army.events += Event.where("id IN (?)", params[:army][:events])
 
-      flash[:success] = "Army successfully updated."
+      flash[:success] = "#{@army.name} updated successfully."
       redirect_to @army
     else
+      flash.now["Unable to save. Please try again."]
       render 'edit'
     end
   end
