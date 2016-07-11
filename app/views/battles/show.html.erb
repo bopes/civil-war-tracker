@@ -21,3 +21,8 @@
   </div>
 
 </div>
+
+<div class='row button-actions'>
+  <%= link_to "Edit", edit_battle_path, class:'btn btn-default' %>
+  <%= link_to "Delete", @battle, method: :delete, data: { confirm: "Are you sure you want to delete the #{@battle.name}?" }, class:'btn btn-danger' %>
+</div>
