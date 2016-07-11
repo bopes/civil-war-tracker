@@ -12,6 +12,8 @@ module ApplicationHelper
   def print_dates(obj)
     if obj.end_date
       "#{obj.begin_date.to_formatted_s(:long)} - #{obj.end_date.to_formatted_s(:long)}"
+    elsif [Battle, Event].include?(obj.class)
+      obj.begin_date.to_formatted_s(:long)
     else
       "#{obj.begin_date.to_formatted_s(:long)} - end"
     end
