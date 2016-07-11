@@ -3,3 +3,7 @@
 <h1>Locations</h1>
 
 <%= render partial: 'layouts/list', locals: { list: @locations } %>
+
+<div class='row center button-actions'>
+  <%= link_to "Add Location", new_location_path, class: 'btn btn-primary' %>
+</div>
