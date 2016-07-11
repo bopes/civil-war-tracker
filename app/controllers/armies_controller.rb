@@ -5,8 +5,8 @@ class ArmiesController < ApplicationController
 
   def new
     @sides = Side.all
-    @battles = Battle.order(:begin_date)
-    @events = Event.order(:begin_date)
+    @battles = Battle.all
+    @events = Event.all
     @army = Army.new
   end
 
@@ -28,6 +28,9 @@ class ArmiesController < ApplicationController
   end
 
   def edit
+    @sides = Side.all
+    @battles = Battle.all
+    @events = Event.all
     @army = Army.find(params[:id])
   end
 
