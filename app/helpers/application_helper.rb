@@ -19,4 +19,8 @@ module ApplicationHelper
     end
   end
 
+  def plural(obj)
+    PLURALS[obj.class.name.to_sym]
+  end
+
 end
