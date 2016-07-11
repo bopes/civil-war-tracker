@@ -4,5 +4,5 @@ PLURALS = { Army: "armies",
             Event: "events",
             Location: "locations",
             Player: "players",
-            Rank: "rank",
+            Rank: "ranks",
             Side: "sides" }
