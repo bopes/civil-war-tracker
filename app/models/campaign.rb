@@ -19,7 +19,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def commanders
-    Rank.where(army: self.army).select { |rank| rank.begin_date < self.begin_date && rank.end_date > self.end_date }
+    Rank.where(army: self.army).select { |rank| rank.begin_date <= self.begin_date && rank.end_date == nil || rank.end_date >= self.end_date }
   end
 
 end
