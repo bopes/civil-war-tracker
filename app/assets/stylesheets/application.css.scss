@@ -133,12 +133,16 @@ td {
 #map {
   height: 500px;
   width: 100%;
+  border: 1px solid $border-color;
 }
 
 .button-actions {
-  margin: 8px;
-  border-top: 1px solid $border-color;
-  padding: 8px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.list-group {
+  margin-bottom: 0;
 }
 
 .list-group-item {
