@@ -3,6 +3,10 @@ class Player < ActiveRecord::Base
   belongs_to :side, inverse_of: :players
   has_many :ranks, inverse_of: :player
 
+  validates :name, presence: true
+  validates :bio, presence: true
+  validates :side, presence: true
+
   def battles
     battles = []
     ranks.each { |rank| battles += rank.battles }
