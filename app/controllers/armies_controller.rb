@@ -4,6 +4,9 @@ class ArmiesController < ApplicationController
   end
 
   def new
+    @sides = Side.all
+    @battles = Battle.order(:begin_date)
+    @events = Event.order(:begin_date)
     @army = Army.new
   end
 
