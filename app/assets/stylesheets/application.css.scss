@@ -48,14 +48,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  // letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
-  // letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
@@ -79,6 +77,11 @@ p {
   line-height: 1.7em;
 }
 
+.inline-dates {
+  font-size: 11px;
+  line-height: 11px;
+}
+
 /* header */
 
 #logo {
@@ -87,7 +90,6 @@ p {
   font-size: 1.7em;
   color: white;
   text-transform: uppercase;
-  // letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
@@ -96,39 +98,7 @@ p {
   }
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
-
-
-td {
-  width: 50%;
-  h3 {
-    margin: 0;
-  }
-}
+/* Map */
 
 #map {
   height: 500px;
@@ -136,10 +106,7 @@ td {
   border: 1px solid $border-color;
 }
 
-.button-actions {
-  text-align: center;
-  margin-top: 16px;
-}
+/* Lists */
 
 .list-group {
   margin-bottom: 0;
@@ -154,15 +121,17 @@ td {
   padding: 0 30px;
 }
 
-.rank-title {
-  margin-bottom: 10px;
-}
-
 .content-container {
   padding: 8px;
 }
 
-.inline-dates {
-  font-size: 11px;
-  line-height: 11px;
+/* Miscellaneous */
+
+.button-actions {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.rank-title {
+  margin-bottom: 10px;
 }
