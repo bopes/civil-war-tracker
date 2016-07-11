@@ -1,11 +1,9 @@
 <%= provide(:title, @battle.name) %>
 <h1><%= @battle.name %></h1>
 
-<% if @battle.end_date %>
-  <h4><%= print_dates(@battle) %></h4>
-<% else %>
-  <h4><%= @battle.begin_date.to_formatted_s(:long) %></h4>
-<% end %>
+<h4><%= link_to @battle.location.name, @battle.location %></h4>
+
+<h4><%= print_dates(@battle) %></h4>
 
 <div class='row'>
   <div class="col-md-6">
