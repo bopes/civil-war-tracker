@@ -31,4 +31,8 @@ class Player < ActiveRecord::Base
     (self.events + self.battles).map { |event| event.location.coordinates }
   end
 
+  def ranks_with(army)
+    Rank.where("player_id = #{self.id} AND army_id = #{army.id}")
+  end
+
 end
