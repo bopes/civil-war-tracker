@@ -1,5 +1,7 @@
 class Location < ActiveRecord::Base
 
+  default_scope { order(:state).order(:city) }
+
   has_many :battles
   has_many :events
 
