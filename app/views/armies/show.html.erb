@@ -4,20 +4,33 @@
 <div class='row'>
   <div class='col-md-6'>
     <div>
-      <h3>Events Included</h3>
-      <%= render partial: 'layouts/list', locals: { list: @army.all_events } %>
-      <%= link_to "Add New Campaign", new_campaign_path(army_id: @army.id), class: "btn btn-default btn-sm" %>
+      <h3>Timeline</h3>
+      <div class='content-container'>
+        <%= render partial: 'layouts/list', locals: { list: @army.all_events } %>
+        <div class='button-actions'>
+          <%= link_to "Add Battle", new_battle_path(army_id: @army.id), class: "btn btn-default btn-sm" %>
+          <%= link_to "Add Campaign", new_campaign_path(army_id: @army.id), class: "btn btn-default btn-sm" %>
+        </div>
+      </div>
     </div>
 
     <h3>Notable Commanders</h3>
-    <% @army.commanders.each do |commander| %>
-      <ul>
-        <li>
-          <%= link_to commander.player.name, commander.player %>
-          <%= " - #{commander.title} (#{print_dates(commander)})" %>
-        </li>
-      </ul>
-    <% end %>
+    <div class='content-container'>
+      <% @army.commanders.each do |commander| %>
+        <div>
+
+          <a href=<%= "/players/#{commander.id}"%> class='list-group-item' >
+            <%= "#{commander.name}" %>
+            <% commander.ranks_with(@army).each do |rank| %>
+                <p>
+                  <span class='inline-dates'><%= "#{rank.title} | #{print_dates(rank)}" %></span>
+                </p>
+              <% end %>
+          </a>
+
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class='col-md-6'>
@@ -26,7 +39,7 @@
   </div>
 </div>
 
-<div class='row center button-actions'>
+<div class='row button-actions'>
   <%= link_to "Edit", edit_army_path, class: 'btn btn-default' %>
   <%= link_to 'Delete', @army, method: :delete, data: { confirm: "Are you sure you want to delete the #{@army.name}?" }, class: 'btn btn-danger' %>
 
