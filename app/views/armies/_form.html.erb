@@ -6,7 +6,7 @@
     </div>
 
     <div class='center side-selection'>
-      <%= f.collection_radio_buttons :side_id, Side.order(:name), :id, :name %>
+      <%= f.collection_radio_buttons :side_id, Side.all, :id, :name %>
     </div>
   </div>
 
