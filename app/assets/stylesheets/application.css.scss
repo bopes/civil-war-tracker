@@ -137,7 +137,9 @@ p {
   width: 40%;
   text-align: center;
   font-size: 2em;
-  margin-bottom: 8px;
+  height: 40px;
+  margin: 0 auto 8px auto;
+  border-radius: 4px;
 }
 
 .side-selection > label {
@@ -153,6 +155,15 @@ p {
 .bio-input {
   width: 100%;
   height: 100px;
+}
+
+.date-input {
+  text-align: center;
+  width: 100px;
+  height: 32px;
+  margin: 0 8px;
+  border-radius: 4px;
+  display: inline;
 }
 
 /* Miscellaneous */
