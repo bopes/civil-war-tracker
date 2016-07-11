@@ -1,1 +1,10 @@
-_form.html.erb
+<%= form_for(@location) do |f| %>
+
+  <%= f.text_field :city, class: 'form-control', placeholder: 'Enter City...' %>
+  <%= f.text_field :state, class: 'form-control', placeholder: 'Enter State...' %>
+
+  <div class='row center'>
+    <%= f.submit yield(:button_text), class:'btn btn-primary' %>
+  </div>
+
+<% end %>
