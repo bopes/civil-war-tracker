@@ -9,7 +9,11 @@ class Rank < ActiveRecord::Base
   end
 
   def battles
-    army.battles.select { |battle| (self.begin_date..self.end_date).cover?(battle.begin_date) }
+    if self.end_date
+      army.battles.select { |battle| (self.begin_date..self.end_date).cover?(battle.begin_date) }
+    else
+      army.battles.select { |battle| self.begin_date < battle.begin_date }
+    end
   end
 
   def campaigns
