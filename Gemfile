@@ -16,6 +16,7 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'geokit'
 
 group :development, :test do
   gem 'sqlite3'
