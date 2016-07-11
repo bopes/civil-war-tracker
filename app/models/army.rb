@@ -18,7 +18,8 @@ class Army < ActiveRecord::Base
   end
 
   def commanders
-    Rank.where(army: self).sort_by { |event| event.begin_date }.reverse
+    all_commanders = Rank.where(army: self).sort_by { |event| event.begin_date }.reverse
+    all_commanders.uniq{ |c| c.player }.map{ |c| c.player }
   end
 
 end
