@@ -13,7 +13,11 @@ class Rank < ActiveRecord::Base
   end
 
   def campaigns
-    army.campaigns.select { |campaign| (self.begin_date..self.end_date).cover?(campaign.begin_date) }
+    if self.end_date
+      army.campaigns.select { |campaign| (self.begin_date..self.end_date).cover?(campaign.begin_date) }
+    else
+      army.campaigns.select { |campaign| self.begin_date < campaign.begin_date }
+    end
   end
 
   def all_events
