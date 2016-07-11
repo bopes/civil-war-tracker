@@ -1,7 +1,13 @@
 <%= form_for(@location) do |f| %>
 
-  <%= f.text_field :city, class: 'form-control', placeholder: 'Enter City...' %>
-  <%= f.text_field :state, class: 'form-control', placeholder: 'Enter State...' %>
+  <div class='row'>
+    <h3>Location</h3>
+    <div class='center content-container'>
+      <%= f.text_field :city, class: 'form-control city-input', placeholder: 'Enter City...' %>
+      <%= f.text_field :state, class: 'form-control state-input', placeholder: 'Enter State...' %>
+    </div>
+
+  </div>
 
   <div class='row center'>
     <%= f.submit yield(:button_text), class:'btn btn-primary' %>
