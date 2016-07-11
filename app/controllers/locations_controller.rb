@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-
+    @location = Location.find_by(params[:id])
   end
 
   def edit
