@@ -1,12 +1,23 @@
 <div class='list-group'>
   <% list.each do |event| %>
 
-    <%= link_to event.name, event, class:'list-group-item' %>
+    <a href=<%= "/#{plural(event)}/#{event.id}" %> class='list-group-item'>
+      <%= event.name %>
+      <% if [Battle, Event, Campaign].include?(event.class) %>
+        <br><span class='inline-dates'><%= print_dates(event) %></span>
+      <% end %>
+    </a>
 
     <% if event.is_a? Campaign %>
       <div class='list-group list-group-nested'>
         <% event.all_events.each do |e| %>
-          <%= link_to e.name, e, class:'list-group-item' %>
+
+          <a href=<%= "/#{plural(e)}/#{e.id}" %> class='list-group-item'>
+            <%= e.name %> <br>
+            <span class='inline-dates'><%= print_dates(e) %></span>
+          </a>
+
+
         <% end %>
       </div>
     <% end %>
