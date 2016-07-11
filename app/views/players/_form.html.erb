@@ -2,26 +2,49 @@
 
   <div class='row'>
     <div class='center'>
-      <h1><%= f.text_field :name, class: 'form_control', placeholder: 'Enter Name Here...' %></h1>
+      <%= f.text_field :name, class: 'form_control name-input', placeholder: 'Enter Name Here...' %>
     </div>
 
-    <div class='center'>
-      <h3><%= f.collection_radio_buttons :side_id, Side.order(:name), :id, :name %></h3>
+    <div class='center side-selection'>
+      <%= f.collection_radio_buttons :side_id, @sides, :id, :name %>
     </div>
   </div>
 
-  <div class='center'>
-    <h3><%= f.label :bio %></h3>
-    <%= f.text_area :bio %>
-  </div>
+  <div class='row'>
+    <div class='col-md-6'>
+      <h3><%= f.label :bio %></h3>
+      <div class='content-container'>
+        <%= f.text_area :bio, class: 'bio-input' %>
+      </div>
 
-  <div>
-    <h3>Positions Held</h3>
-    <h3 id="add_rank">+</h3>
+      <h3>Positions Held</h3>
+      <div class='content-container center'>
+        <ul id='ranks-list' class='list-group'></ul>
+        <div id='ranks-list-add' class='btn btn-default btn-sm'>Add Position</div>
+      </div>
+
+    </div>
+
+    <div class='col-md-6'>
+
+      <h3>Events</h3>
+
+      <div class='content-container'>
+        <% @events.each do |event| %>
+          <p>
+            <label>
+              <%= check_box_tag :events, event.id, @player.events.include?(event), name: 'army[events][]' %>
+              <%= event.name %>
+            </label>
+          </p>
+        <% end %>
+      </div>
+
+    </div>
   </div>
 
   <div class='row center'>
-    <%= f.submit yield(:button_text), class:'btn btn-default' %>
+    <%= f.submit yield(:button_text), class:'btn btn-primary btn-lg' %>
   </div>
 
 <% end %>
