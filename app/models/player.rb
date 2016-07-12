@@ -1,7 +1,7 @@
 class Player < ActiveRecord::Base
 
   belongs_to :side, inverse_of: :players
-  has_many :ranks, inverse_of: :player
+  has_many :ranks, inverse_of: :player, dependent: :destroy
 
   validates :name, presence: true
   validates :bio, presence: true
