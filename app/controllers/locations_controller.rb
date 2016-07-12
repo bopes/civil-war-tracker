@@ -37,10 +37,14 @@ class LocationsController < ApplicationController
   private
 
     def location_params
+      p params
       city = params[:location][:city]
+      county = params[:location][:county]
       state = params[:location][:state]
-      loc_raw = Geokit::Geocoders::GoogleGeocoder.geocode "#{city}, #{state}"
-      return {  city: city,
+
+      city.blank? ? place = "#{county}, #{state}" : place = "#{city}, #{state}"
+      loc_raw = Geokit::Geocoders::GoogleGeocoder.geocode place
+      return {  city: loc_raw.city,
                 state: loc_raw.state_name,
                 county: loc_raw.district,
                 lat: loc_raw.lat,
