@@ -6,6 +6,7 @@ class BattlesController < ApplicationController
   end
 
   def show
+    @sides = Side.all
     @battle = Battle.find(params[:id])
     @battleName = @battle.name
     battle_location = { lat: @battle.location.lat,
