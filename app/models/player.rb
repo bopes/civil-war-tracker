@@ -1,5 +1,7 @@
 class Player < ActiveRecord::Base
 
+  default_scope { order(:name) }
+
   belongs_to :side, inverse_of: :players
   has_many :ranks, inverse_of: :player, dependent: :destroy
 
