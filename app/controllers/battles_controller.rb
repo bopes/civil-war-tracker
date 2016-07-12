@@ -17,8 +17,10 @@ class BattlesController < ApplicationController
     @campaigns = Campaign.all
     @locations = Location.all
     @battle = Battle.new
-    army = Army.find(params[:army_id])
-    @battle.armies << army
+    if params[:army_id]
+      army = Army.find(params[:army_id])
+      @battle.armies << army
+    end
   end
 
   def create
