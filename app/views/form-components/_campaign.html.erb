@@ -1,0 +1,4 @@
+<h3>Campaign</h3>
+<div class='content-container'>
+  <%= f.collection_select :campaign_id, @campaigns, :id, :name, {prompt: "Select campaign...",}, {class: 'form-control'} %>
+</div>
