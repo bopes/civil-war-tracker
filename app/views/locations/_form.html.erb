@@ -1,10 +1,17 @@
 <%= form_for(@location) do |f| %>
 
+  <div id='enter-name'>
+    <div class='row center'>
+      <%= f.text_field :location_name, class: 'form-control name-input', placeholder: 'Enter Name Here...' %>
+    </div>
+  </div>
+
   <div class='row'>
     <h3>Location</h3>
-    <div class='center content-container'>
-      <%= f.text_field :city, class: 'form-control city-input', placeholder: 'Enter City...' %>
-      <%= f.text_field :state, class: 'form-control state-input', placeholder: 'Enter State...' %>
+    <div class='content-container'>
+      <%= f.text_field :city, class: 'form-control location-input', placeholder: 'Enter City...' %>
+      <%= f.text_field :state, class: 'form-control location-input', placeholder: 'Enter State...' %>
+      <%= f.text_field :county, class: 'form-control location-input', placeholder: 'Enter County...' %>
     </div>
 
   </div>
