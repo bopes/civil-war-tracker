@@ -15,7 +15,8 @@
         <% @player.ranks.each do |rank| %>
           <li class='list-group-item'>
             <div class='rank-title'>
-              <%= "#{rank.title} - " %>
+              <%= link_to rank.title, edit_rank_path(rank) %>
+              <span> - </span>
               <%= link_to rank.army.name, rank.army %> <br>
               <span><%= "#{print_dates(rank)}" %></span>
             </div>
