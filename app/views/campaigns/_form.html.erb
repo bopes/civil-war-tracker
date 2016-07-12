@@ -1,26 +1,15 @@
 <%= form_for(@campaign) do |f| %>
 
-  <div class='row center'>
-    <%= f.text_field :name, class: 'form-control name-input', placeholder: 'Enter Name Here...' %>
-  </div>
+  <%= render partial: 'form-components/name', locals: { f: f } %>
 
   <div class='row'>
     <div class='col-md-6'>
-      <h3>Army</h3>
-      <div class='content-container'>
-        <%= f.grouped_collection_select :army_id, Side.all, :armies, :name, :id, :name, {}, {class: 'form-control'} %>
-      </div>
+      <%= render partial: 'form-components/army', locals: { f: f } %>
     </div>
 
     <div class='col-md-6'>
-      <h3>Dates</h3>
-      <div class='center content-container'>
-        <%= f.date_field :begin_date, class: 'form-control date-input', placeholder: 'Begin Date' %>
-        to
-        <%= f.date_field :end_date, class: 'form-control date-input', placeholder: 'End Date' %>
-      </div>
+      <%= render partial: 'form-components/dates', locals: { f: f } %>
     </div>
-
   </div>
 
   <div class='row center'>
