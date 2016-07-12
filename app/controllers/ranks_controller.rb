@@ -34,7 +34,7 @@ class RanksController < ApplicationController
   def destroy
     @rank = Rank.find(params[:id])
     @player = @rank.player
-    @rank.destroy
+    @rank.delete
     redirect_to @player
   end
 
