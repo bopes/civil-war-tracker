@@ -29,7 +29,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.create(campaign_params)
     if @campaign.save
-      flash[:success] = "#{@campaign.name} added successfully!"
+      flash[:success] = "#{@campaign.name} updated successfully!"
       redirect_to @campaign
     else
       flash.now[:danger] = "Unable to save. Please try again."
