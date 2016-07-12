@@ -19,6 +19,12 @@ class Location < ActiveRecord::Base
     end
   end
 
+  def long_name
+    city = ""
+    city = "#{self.city}, " unless self.city.blank?
+    return "#{city}#{self.state} (#{self.county})"
+  end
+
   def all_events
     self.battles + self.events
   end
