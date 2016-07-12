@@ -1,4 +1,6 @@
-<h3>Location</h3>
-<div class='content-container'>
-  <%= f.collection_select :location_id, @locations, :id, :name, {prompt: "Select location..."}, {class: 'form-control'} %>
+<div id='select-location'>
+  <h3>Location</h3>
+  <div class='content-container'>
+    <%= f.collection_select :location_id, @locations, :id, :name, {prompt: "Select location..."}, {class: 'form-control'} %>
+  </div>
 </div>
