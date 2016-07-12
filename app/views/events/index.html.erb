@@ -1,2 +1,9 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<%= provide(:title, 'Events') %>
+
+<h1>Events</h1>
+
+<%= render partial: 'layouts/list', locals: { list: @events } %>
+
+<div class='row center button-actions'>
+  <%= link_to "Add Event", new_event_path, class: 'btn btn-primary' %>
+</div>
