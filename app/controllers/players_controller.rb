@@ -28,9 +28,22 @@ class PlayersController < ApplicationController
   end
 
   def edit
+    @sides = Side.all
+    @events = Event.order(:begin_date)
+    @player = Player.find(params[:id])
   end
 
   def update
+    @player = Player.find(params[:id])
+    if @player.update_attributes(player_params)
+      # @player.battles += Battle.where("id IN (?)", params[:army][:battles])
+      # @army.events += Event.where("id IN (?)", params[:army][:events])
+      flash[:success] = "#{@player.name} updated successfully!"
+      redirect_to @player
+    else
+      flash.now[:danger] = "Unable to save. Please try again."
+      render 'new'
+    end
   end
 
   def destroy
