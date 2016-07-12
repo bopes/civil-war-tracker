@@ -1,0 +1,6 @@
+<div id='select-army'>
+  <h3>Army</h3>
+  <div class='content-container'>
+    <%= f.grouped_collection_select :army_id, Side.all, :armies, :name, :id, :name, {}, {class: 'form-control'} %>
+  </div>
+</div>
