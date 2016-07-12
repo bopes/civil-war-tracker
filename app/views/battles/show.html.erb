@@ -25,7 +25,7 @@
             <div class='content-container'>
               <h4><%= side.name %></h4>
               <% @battle.armies.select{ |army| army.side == side }.each do |army| %>
-                <p><%= army.name %></p>
+                <p><%= link_to army.name, army %></p>
               <% end %>
             </div>
           </div>
