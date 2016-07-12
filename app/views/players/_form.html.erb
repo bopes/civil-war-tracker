@@ -1,13 +1,8 @@
 <%= form_for(@player) do |f| %>
 
   <div class='row'>
-    <div class='center'>
-      <%= f.text_field :name, class: 'form-control name-input', placeholder: 'Enter Name Here...' %>
-    </div>
-
-    <div class='center side-selection'>
-      <%= f.collection_radio_buttons :side_id, @sides, :id, :name %>
-    </div>
+    <%= render partial: 'form-components/name', locals: { f: f } %>
+    <%= render partial: 'form-components/side', locals: { f: f } %>
   </div>
 
   <div class='row'>
@@ -43,8 +38,6 @@
     </div>
   </div>
 
-  <div class='row center'>
-    <%= f.submit yield(:button_text), class:'btn btn-primary' %>
-  </div>
+  <%= render partial: 'form-components/submit_button', locals: { f: f } %>
 
 <% end %>
