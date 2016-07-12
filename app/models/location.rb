@@ -10,7 +10,11 @@ class Location < ActiveRecord::Base
   end
 
   def name
-    "#{self.city}, #{self.state}"
+    if self.city.blank?
+      "#{self.county}, #{self.state}"
+    else
+      "#{self.city}, #{self.state}"
+    end
   end
 
   def all_events
