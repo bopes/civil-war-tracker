@@ -30,3 +30,16 @@
     <%= link_to "Add Battle", new_battle_path, class: 'btn btn-primary' %>
   </div>
 </div>
+
+<div id='standalone-events'>
+  <div class='row'>
+    <h3>Standalone Events</h3>
+    <div class='content-container'>
+      <%= render partial: 'layouts/list', locals: { list: @events } %>
+    </div>
+  </div>
+
+  <div class='row center button-actions'>
+    <%= link_to "Add Event", new_event_path, class: 'btn btn-primary' %>
+  </div>
+</div>
