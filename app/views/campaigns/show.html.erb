@@ -8,7 +8,9 @@
     <h3>Campaign Events</h3>
     <div class='content-container'>
       <%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
+      <%= link_to "Add Battle", new_battle_path(campaign_id: @campaign.id), class: 'btn btn-default btn-sm add-new' %>
     </div>
+
 
     <h3>Campaign Commanders</h3>
     <div class='content-container'>
