@@ -9,6 +9,7 @@
     <div class='content-container'>
       <%= render partial: 'layouts/list', locals: { list: @campaign.all_events } %>
       <%= link_to "Add Battle", new_battle_path(campaign_id: @campaign.id), class: 'btn btn-default btn-sm add-new' %>
+      <%= link_to "Add Event", new_event_path(campaign_id: @campaign.id), class: 'btn btn-default btn-sm add-new' %>
     </div>
 
 
