@@ -43,8 +43,9 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
+    @campaign = @event.campaign if @event.campaign
     @event.destroy
-    redirect_to 'engagements'
+    @campaign ? redirect_to @campaign : redirect_to engagements_url
   end
 
   private
