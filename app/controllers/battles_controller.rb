@@ -17,6 +17,7 @@ class BattlesController < ApplicationController
     @campaigns = Campaign.all
     @locations = Location.all
     @battle = Battle.new
+    @battle.campaign =  Campaign.find(params[:campaign_id]) if params[:campaign_id]
     if params[:army_id]
       army = Army.find(params[:army_id])
       @battle.armies << army
