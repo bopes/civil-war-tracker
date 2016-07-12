@@ -79,6 +79,11 @@ h4 {
   padding-bottom: 8px;
 }
 
+h5 {
+  font-size: 18px;
+  line-height: 18px;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -146,6 +151,9 @@ p {
   padding: 8px;
   text-align: center;
   color: $text-color;
+  > .paragraphs {
+    text-align: left;
+  }
 }
 
 .add-new {
