@@ -208,8 +208,11 @@ p {
   display: inline;
 }
 
-.checklist-normal > label {
-  font-weight: normal !important;
+.checklist-normal {
+  text-align: left;
+  > label {
+    font-weight: normal !important;
+  }
 }
 
 /* Miscellaneous */
