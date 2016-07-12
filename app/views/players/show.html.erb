@@ -10,7 +10,7 @@
     </div>
 
     <h3>Timeline</h3>
-    <div class='center content-container'>
+    <div class='content-container'>
       <ul class='list-group'>
         <% @player.ranks.each do |rank| %>
           <li class='list-group-item'>
@@ -25,7 +25,7 @@
           </li>
         <% end %>
       </ul>
-      <%= link_to "Add Rank", new_rank_path(player_id: @player.id), class: 'btn btn-default btn-sm add-rank' %>
+      <%= link_to "Add Rank", new_rank_path(player_id: @player.id), class: 'btn btn-default btn-sm add-new' %>
     </div>
   </div>
 
