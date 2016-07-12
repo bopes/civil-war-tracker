@@ -10,7 +10,9 @@ class Location < ActiveRecord::Base
   end
 
   def name
-    if self.city.blank?
+    if self.location_name
+      self.location_name
+    elsif self.city.blank?
       "#{self.county}, #{self.state}"
     else
       "#{self.city}, #{self.state}"
