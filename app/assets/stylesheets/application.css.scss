@@ -5,6 +5,7 @@
 
 $gray-medium-light: #eaeaea;
 $border-color: rgb(221,221,221);
+$text-color: rgb(85,85,85);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -144,6 +145,7 @@ p {
 .content-container {
   padding: 8px;
   text-align: center;
+  color: $text-color;
 }
 
 .add-new {
