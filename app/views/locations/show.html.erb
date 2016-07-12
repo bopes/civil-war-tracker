@@ -17,3 +17,8 @@
     </div>
   </div>
 </div>
+
+<div class='row button-actions'>
+  <%= link_to "Edit", edit_location_path, class:'btn btn-default' %>
+  <%= link_to "Delete", @location, method: :delete, data: { confirm: "Are you sure you want to delete #{@location.name}?" }, class:'btn btn-danger' %>
+</div>
