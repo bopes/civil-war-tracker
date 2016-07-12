@@ -16,6 +16,7 @@ class RanksController < ApplicationController
   end
 
   def edit
+    @sides = Side.all
     @rank = Rank.find(params[:id])
   end
 
