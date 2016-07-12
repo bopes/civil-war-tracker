@@ -1,1 +1,22 @@
-_form.html.erb
+<%= form_for(@event) do |f| %>
+
+  <!-- name, campaign, location, begin-date, end-date, description -->
+
+  <%= render partial: 'form-components/name', locals: { f: f } %>
+
+  <div class='row'>
+    <div class='col-md-6'>
+      <%= render partial: 'form-components/location', locals: { f: f} %>
+      <%= render partial: 'form-components/dates', locals: { f: f} %>
+    </div>
+    <div class='col-md-6'>
+      <%= render partial: 'form-components/campaign', locals: { f: f} %>
+      <%= render partial: 'form-components/description', locals: { f: f} %>
+    </div>
+  </div>
+
+  <div class='row center'>
+    <%= f.submit yield(:button_text), class:'btn btn-primary' %>
+  </div>
+
+<% end %>
