@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160626214539) do
+ActiveRecord::Schema.define(version: 20160712211115) do
 
   create_table "armies", force: :cascade do |t|
     t.integer  "side_id"
@@ -80,8 +80,9 @@ ActiveRecord::Schema.define(version: 20160626214539) do
     t.string   "county"
     t.decimal  "lat"
     t.decimal  "long"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "location_name"
   end
 
   create_table "players", force: :cascade do |t|
