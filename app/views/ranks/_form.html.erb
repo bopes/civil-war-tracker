@@ -34,6 +34,7 @@
 
   <div class='row center'>
     <%= f.submit yield(:button_text), class:'btn btn-primary' %>
+    <%= link_to "Remove Rank", @rank, method: :delete, data: { confirm: "Are you sure you want to delete this rank?" }, class:'btn btn-danger' if @rank.id %>
   </div>
 
 <% end %>
