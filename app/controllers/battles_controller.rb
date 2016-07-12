@@ -56,6 +56,12 @@ class BattlesController < ApplicationController
     end
   end
 
+  def destroy
+    @battle = Battle.find(params[:id])
+    @battle.delete
+    redirect_to engagements_url
+  end
+
   private
 
     def battle_params
