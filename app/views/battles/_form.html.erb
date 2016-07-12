@@ -47,8 +47,6 @@
     <%= render partial: 'form-components/description', locals: { f: f } %>
   </div>
 
-  <div class='row center'>
-    <%= f.submit yield(:button_text), class:'btn btn-primary' %>
-  </div>
+  <%= render partial: 'form-components/submit_button', locals: { f: f } %>
 
 <% end %>
