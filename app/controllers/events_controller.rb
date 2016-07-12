@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   def new
     @campaigns = Campaign.all
     @locations = Location.all
-    @event = Event.new
+    @event = Event.new(campaign_id: params[:campaign_id])
   end
 
   def create
@@ -45,7 +45,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @campaign = @event.campaign if @event.campaign
     @event.destroy
-    @campaign ? redirect_to @campaign : redirect_to engagements_url
+    if @campaign
+      redirect_to @campaign
+    else
+      redirect_to engagements_url
+    end
   end
 
   private
