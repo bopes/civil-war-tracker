@@ -1,15 +1,50 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  player_id: 1
-  title: MyString
-  begin_date: 2016-06-22
-  end_date: 2016-06-22
-  army_id: 1
+rank_grant:
+  player: grant
+  title: Lieutenant General
+  begin_date: 2015-06-22
+  end_date: 2015-06-30
+  army: union_army
 
-two:
-  player_id: 1
-  title: MyString
+rank_lee:
+  player: lee
+  title: General
   begin_date: 2016-06-22
-  end_date: 2016-06-22
-  army_id: 1
+  end_date: 2016-06-23
+  army: confederate_army
+
+rank2:
+  player: union2
+  title: Soldier
+  begin_date: 2015-01-01
+  end_date: 2015-01-02
+  army: union_army
+
+rank3:
+  player: union3
+  title: Soldier
+  begin_date: 2015-01-01
+  end_date: 2015-06-27
+  army: union_army
+
+rank4:
+  player: union4
+  title: Soldier
+  begin_date: 2015-06-27
+  end_date: 2017-06-30
+  army: union_army
+
+rank5:
+  player: union5
+  title: Soldier
+  begin_date: 2017-06-27
+  end_date: 2017-06-30
+  army: union_army
+
+rank6:
+  player: union5
+  title: Major
+  begin_date: 2017-07-01
+  end_date:
+  army: union_army

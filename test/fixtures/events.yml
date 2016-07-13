@@ -1,15 +1,41 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  campaign_id: 
-  begin_date: 2016-06-26
-  end_date: 2016-06-26
+event1:
+  name: event_one
+  campaign: vicksburg
+  begin_date: 2015-06-27
+  end_date: 2015-06-28
   description: MyText
+  location: sf
 
-two:
-  name: MyString
-  campaign_id: 
+event2:
+  name: event_two
+  campaign:
   begin_date: 2016-06-26
   end_date: 2016-06-26
   description: MyText
+  location: sf
+
+event3:
+  name: event_three
+  campaign:
+  begin_date: 2015-06-26
+  end_date: 2015-06-26
+  description: MyText
+  location: sf
+
+eventLate:
+  name: event_late
+  campaign:
+  begin_date: 2017-08-05
+  end_date:
+  description: late
+  location: sf
+
+eventGrant:
+  name: event_grant
+  campaign:
+  begin_date: 2015-06-27
+  end_date: 2015-06-28
+  description: MyText
+  location: charlotte
