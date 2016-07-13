@@ -4,6 +4,10 @@ class Rank < ActiveRecord::Base
   belongs_to :player, inverse_of: :ranks
   belongs_to :army
 
+  validates :begin_date, presence: true
+  validates :player_id, presence: true
+  validates :army_id, presence: true
+
   def events
     if self.end_date
       army.events.select { |event| (self.begin_date..self.end_date).cover?(event.begin_date) }

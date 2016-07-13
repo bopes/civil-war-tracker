@@ -6,6 +6,9 @@ class Campaign < ActiveRecord::Base
   has_many :battles
   has_many :events
 
+  validates :begin_date, presence: true
+  validates :army_id, presence: true
+
   def side
     army.side
   end
