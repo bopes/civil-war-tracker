@@ -31,7 +31,7 @@ class ArmyTest < ActiveSupport::TestCase
 
   test "all_events should not include events/battles belonging to own army's campaign" do
     events = @army.all_events
-    assert_equal events.length, 5
+    assert_equal 5, events.length
     refute_includes events, battles(:test_battle)
   end
 
@@ -41,12 +41,12 @@ class ArmyTest < ActiveSupport::TestCase
   end
 
   test 'location_coordinates should return list of location coordinates' do
-    assert_equal @army.location_coordinates.length, 5
+    assert_equal 5, @army.location_coordinates.length
     assert_includes @army.location_coordinates, battles(:test_battle).location.coordinates
   end
 
   test 'commanders should return list of players sorted by reverse begin_date' do
-    assert_equal @army.commanders.length, 5
+    assert_equal 5, @army.commanders.length
     assert_equal @army.commanders.first, players(:union5)
   end
 
