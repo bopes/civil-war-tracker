@@ -2,7 +2,14 @@
 
 <h1>Locations</h1>
 
-<%= render partial: 'layouts/list', locals: { list: @locations } %>
+<div class='row list-narrow-wrapper'>
+  <div class='list-narrow-header'>
+    <h3></h3>
+  </div>
+  <div class='list-narrow'>
+    <%= render partial: 'layouts/list', locals: { list: @locations } %>
+  </div>
+</div>
 
 <div class='row center button-actions'>
   <%= link_to "Add Location", new_location_path, class: 'btn btn-primary' %>
