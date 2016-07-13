@@ -7,6 +7,8 @@ class Location < ActiveRecord::Base
 
   validates :state, presence: true
   validates :county, presence: true
+  validates :lat, presence: true
+  validates :long, presence: true
 
   def coordinates
     {lat: self.lat, lng: self.long }
