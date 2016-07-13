@@ -1,8 +1,6 @@
 class BattlesController < ApplicationController
   def index
-    @sides = Side.all
-    @battles = Battle.where(campaign: nil)
-    @events = Event.where(campaign: nil)
+    @battles = Battle.all
   end
 
   def show
