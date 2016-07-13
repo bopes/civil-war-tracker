@@ -26,7 +26,7 @@
   <% end %>
 </div>
 
-<h3>Campaigns</h3>
+<h3>Engagements</h3>
 <div class='row'>
   <% @sides.each do |side| %>
     <div class='col-md-6'>
@@ -35,4 +35,18 @@
       </div>
     </div>
   <% end %>
+</div>
+
+<h3>Standalone Battles</h3>
+<div class='row list-narrow-wrapper'>
+  <div class='list-narrow'>
+    <%= render partial: 'layouts/list', locals: { list: @battles } %>
+  </div>
+</div>
+
+<h3>Standalone Events</h3>
+<div class='row list-narrow-wrapper'>
+  <div class='list-narrow'>
+    <%= render partial: 'layouts/list', locals: { list: @events } %>
+  </div>
 </div>
