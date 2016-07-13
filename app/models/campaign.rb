@@ -5,13 +5,10 @@ class Campaign < ActiveRecord::Base
   belongs_to :army, inverse_of: :campaigns
   has_many :battles
   has_many :events
+  has_one :side, through: :army
 
   validates :begin_date, presence: true
   validates :army_id, presence: true
-
-  def side
-    army.side
-  end
 
   def all_events
     (self.battles + self.events).sort_by! { |event| event.begin_date }
@@ -22,7 +19,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def commanders
-    Rank.where(army: self.army).select { |rank| rank.begin_date <= self.begin_date && rank.end_date == nil || rank.end_date >= self.end_date }
+    Rank.where(army: self.army).select { |rank| rank.begin_date <= self.end_date && (rank.end_date == nil || rank.end_date >= self.begin_date) }
   end
 
 end
