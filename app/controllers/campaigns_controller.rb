@@ -27,8 +27,8 @@ class CampaignsController < ApplicationController
   end
 
   def update
-    @campaign = Campaign.create(campaign_params)
-    if @campaign.save
+    @campaign = Campaign.find(params[:id])
+    if @campaign.update_attributes(campaign_params)
       flash[:success] = "#{@campaign.name} updated successfully!"
       redirect_to @campaign
     else
