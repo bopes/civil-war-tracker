@@ -5,13 +5,15 @@ class ArmiesTest < ActionDispatch::IntegrationTest
   def setup
     @side = sides(:union)
     @army = armies(:union_army)
+    @all_armies = Army.all
+    @all_battles = Battle.all
+    @all_events = Event.all
   end
 
   test 'index page' do
     get armies_path
     assert_template 'armies/index'
-    all_armies = Army.all
-    all_armies.each do |army|
+    @all_armies.each do |army|
       assert_select 'a[href=?]', army_path(army), text: army.name
     end
     assert_select 'a[href=?]', new_army_path, text: "Add Army"
@@ -21,12 +23,10 @@ class ArmiesTest < ActionDispatch::IntegrationTest
     # Check layout
     get new_army_path
     assert_template 'armies/new'
-    all_battles = Battle.all
-    all_battles.each do |battle|
+    @all_battles.each do |battle|
       assert_select 'label', text: battle.name
     end
-    all_events = Event.all
-    all_events.each do |event|
+    @all_events.each do |event|
       assert_select 'label', text: event.name
     end
 
@@ -72,15 +72,11 @@ class ArmiesTest < ActionDispatch::IntegrationTest
     # Check layout
     get edit_army_path(@army)
     assert_template 'armies/edit'
-    all_battles = Battle.all
-    all_battles.each do |battle|
+    @all_battles.each do |battle|
       assert_select 'label', text: battle.name
-      assert_select 'input', checked: true if @army.battles.include?(battle)
     end
-    all_events = Event.all
-    all_events.each do |event|
+    @all_events.each do |event|
       assert_select 'label', text: event.name
-      assert_select 'input', checked: true if @army.events.include?(event)
     end
 
     # Edit with invalid data
