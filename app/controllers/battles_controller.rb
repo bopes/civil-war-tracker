@@ -31,7 +31,10 @@ class BattlesController < ApplicationController
       flash[:success] = "#{@battle.name} added successfully!"
       redirect_to @battle
     else
-      flash.now["Unable to save. Please try again."]
+      @sides = Side.all
+      @campaigns = Campaign.all
+      @locations = Location.all
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'new'
     end
   end
@@ -51,7 +54,10 @@ class BattlesController < ApplicationController
       flash[:success] = "#{@battle.name} updated successfully!"
       redirect_to @battle
     else
-      flash.now["Unable to save. Please try again."]
+      @sides = Side.all
+      @campaigns = Campaign.all
+      @locations = Location.all
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'edit'
     end
   end
