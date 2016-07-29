@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  army: 
-  begin_date: 2016-06-22
-  end_date: 2016-06-22
+vicksburg:
+  name: V Campaign
+  army: union_army
+  begin_date: 2015-06-26
+  end_date: 2015-06-28
 
-two:
-  name: MyString
-  army: 
+maryland:
+  name: M Campaign
+  army: confederate_army
   begin_date: 2016-06-22
-  end_date: 2016-06-22
+  end_date: 2016-06-23
+
+late_campaign:
+  name: late
+  army: union_army
+  begin_date: 2018-01-01
+  end_date:

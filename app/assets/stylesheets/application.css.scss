@@ -6,6 +6,7 @@
 $gray-medium-light: #eaeaea;
 $border-color: rgb(221,221,221);
 $text-color: rgb(85,85,85);
+$header-color: rgb(34,34,34);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -84,11 +85,6 @@ h5 {
   line-height: 18px;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
 .inline-event-name {
   font-size: 13px;
   line-height: 13px;
@@ -113,6 +109,25 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.header-dropdown-base {
+  padding-right: 0 !important;
+}
+
+.header-dropdown-caret {
+  padding: 15px 15px 15px 5px;
+  background-color: transparent;
+  color: rgb(119,119,119);
+  border: none;
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.header-dropdown-menu {
+  margin-top: -7px;
 }
 
 /* Map */
@@ -146,6 +161,21 @@ p {
     border-radius: 0;
   }
 }
+
+.list-narrow-wrapper {
+  text-align: center;
+}
+
+.list-narrow-header {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.list-narrow {
+  width: 50%;
+  margin: 0 auto;
+}
+
 
 .content-container {
   padding: 8px;

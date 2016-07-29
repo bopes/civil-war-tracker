@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'engagements' => 'battles#index'
+  get 'engagements' => 'static_pages#engagements'
 
   resources :players
   resources :armies

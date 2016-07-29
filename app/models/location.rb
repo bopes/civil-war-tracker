@@ -5,6 +5,11 @@ class Location < ActiveRecord::Base
   has_many :battles
   has_many :events
 
+  validates :state, presence: true
+  validates :county, presence: true
+  validates :lat, presence: true
+  validates :long, presence: true
+
   def coordinates
     {lat: self.lat, lng: self.long }
   end

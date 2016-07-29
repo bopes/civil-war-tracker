@@ -18,6 +18,9 @@ class ArmiesController < ApplicationController
       flash[:success] = "#{@army.name} added successfully!"
       redirect_to @army
     else
+      @sides = Side.all
+      @battles = Battle.all
+      @events = Event.all
       flash.now[:danger] = "Unable to save. Please try again."
       render 'new'
     end
@@ -47,7 +50,10 @@ class ArmiesController < ApplicationController
       flash[:success] = "#{@army.name} updated successfully."
       redirect_to @army
     else
-      flash.now["Unable to save. Please try again."]
+      @sides = Side.all
+      @battles = Battle.all
+      @events = Event.all
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'edit'
     end
   end

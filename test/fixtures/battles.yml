@@ -2,10 +2,40 @@
 
 test_battle:
   name: "Test Battle"
-  begin_date: 2016-06-26
-  end_date: 2016-06-27
-  location_id: 1
-  victor_id: 1
-  campaign_id: 1
+  begin_date: 2016-01-01
+  end_date: 2016-01-02
+  location: sf
+  victor: union
+  campaign: vicksburg
   conclusion: Retreat
-  description: "Test description"
+  description: "Test Battle 1 description"
+
+test_battle_late:
+  name: "Test Battle Late"
+  begin_date: 2018-02-01
+  end_date: 2018-02-02
+  location: sf
+  victor: union
+  campaign:
+  conclusion: Retreat
+  description: "Test Battle 2 description"
+
+test_battle_early:
+  name: "Test Battle Early"
+  begin_date: 2015-01-01
+  end_date: 2015-01-02
+  location: sf
+  victor: union
+  campaign: maryland
+  conclusion: Retreat
+  description: "Test Battle 3 description"
+
+test_battle_grant:
+  name: "Test Battle Grant"
+  begin_date: 2015-06-23
+  end_date:
+  location: charlotte
+  victor: confederacy
+  campaign:
+  conclusion: Retreat
+  description: "Test Battle 3 description"

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 union_army:
-  side_id: 1
+  side: union
   name: Potomac
 
 confederate_army:
-  side_id: 2
+  side: confederacy
   name: Northern VA

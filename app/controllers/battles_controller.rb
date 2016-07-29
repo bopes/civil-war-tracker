@@ -1,11 +1,10 @@
 class BattlesController < ApplicationController
   def index
-    @sides = Side.all
-    @battles = Battle.where(campaign: nil)
-    @events = Event.where(campaign: nil)
+    @battles = Battle.all
   end
 
   def show
+    @sides = Side.all
     @battle = Battle.find(params[:id])
     @battleName = @battle.name
     battle_location = { lat: @battle.location.lat,
@@ -32,7 +31,10 @@ class BattlesController < ApplicationController
       flash[:success] = "#{@battle.name} added successfully!"
       redirect_to @battle
     else
-      flash.now["Unable to save. Please try again."]
+      @sides = Side.all
+      @campaigns = Campaign.all
+      @locations = Location.all
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'new'
     end
   end
@@ -52,7 +54,10 @@ class BattlesController < ApplicationController
       flash[:success] = "#{@battle.name} updated successfully!"
       redirect_to @battle
     else
-      flash.now["Unable to save. Please try again."]
+      @sides = Side.all
+      @campaigns = Campaign.all
+      @locations = Location.all
+      flash.now[:danger] = "Unable to save. Please try again."
       render 'edit'
     end
   end

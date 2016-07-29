@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+union:
+  name: The Union
 
-two:
-  name: MyString
+confederacy:
+  name: The Confederacy
