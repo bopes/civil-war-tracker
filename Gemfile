@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'geokit'
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   gem 'sqlite3'
