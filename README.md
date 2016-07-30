@@ -1,5 +1,5 @@
 # Civil War Tracker
-Track the history of the US Civil War throught its most significant people, armies, locations and events.
+Track the history of the US Civil War throught its most significant people, armies, locations and events. Application built with Ruby on Rails and utilizign Google Maps API.
 
 ### Armies
 See a history for each major US and Confederate army, including their most famous campaigns and battles, a list of their notable commanding officers, and a map detailing their movements throughout the war.
